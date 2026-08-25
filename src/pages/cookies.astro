@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<BaseLayout title="Configuración de cookies | Guía Mercado San Pedro" description="Administre las preferencias de cookies del proyecto independiente Guía Cultural del Mercado San Pedro de Cusco." path="/cookies/">
+<SiteHeader />
+<main class="mx-auto max-w-4xl px-5 py-16 lg:px-8">
+  <p class="text-sm font-bold uppercase tracking-[.2em] text-[#315d42]">Privacidad y preferencias</p>
+  <h1 class="display mt-3 text-5xl font-bold">Configuración de cookies</h1>
+  <p class="mt-3 text-sm text-black/55">Última actualización: agosto de 2026</p>
+  <div class="prose-policy mt-10">
+    <p>Usamos cookies y almacenamiento local para funciones esenciales y, si usted lo autoriza, para comprender de forma agregada cómo se utiliza el sitio. Puede cambiar su elección en cualquier momento desde esta página.</p>
+  </div>
+  <form id="cookie-form" class="mt-8 space-y-4">
+    <section class="card rounded-3xl p-6"><div class="flex items-start justify-between gap-4"><div><h2 class="text-xl font-bold">Cookies necesarias</h2><p class="mt-2 text-sm leading-7 text-black/65">Imprescindibles para recordar su configuración de privacidad y mantener funciones básicas. No pueden desactivarse desde este panel.</p></div><span class="pill shrink-0 rounded-full px-3 py-1 text-xs font-bold">Siempre activas</span></div></section>
+    <section class="card rounded-3xl p-6"><label class="flex cursor-pointer items-start justify-between gap-5"><div><h2 class="text-xl font-bold">Cookies analíticas</h2><p class="mt-2 text-sm leading-7 text-black/65">Permiten activar Google Analytics para obtener estadísticas de uso agregadas. Se mantienen desactivadas hasta que usted las acepte.</p></div><input id="analytics" type="checkbox" class="mt-1 h-6 w-6 accent-[#315d42]" /></label></section>
+    <section class="card rounded-3xl p-6"><label class="flex cursor-pointer items-start justify-between gap-5"><div><h2 class="text-xl font-bold">Cookies de preferencias</h2><p class="mt-2 text-sm leading-7 text-black/65">Permiten recordar ajustes no esenciales de interfaz en este dispositivo. Actualmente el sitio no ofrece selector de idioma porque la guía se publica solo en español.</p></div><input id="preferences" type="checkbox" class="mt-1 h-6 w-6 accent-[#315d42]" /></label></section>
+    <section class="card rounded-3xl p-6"><div class="flex items-start justify-between gap-5"><div><h2 class="text-xl font-bold">Cookies de marketing</h2><p class="mt-2 text-sm leading-7 text-black/65">Este proyecto no utiliza publicidad personalizada ni cookies de marketing. Esta categoría permanece inactiva.</p></div><span class="pill shrink-0 rounded-full px-3 py-1 text-xs font-bold">Desactivadas</span></div></section>
+    <div class="flex flex-wrap gap-3 pt-3"><button type="submit" class="rounded-full bg-[#315d42] px-6 py-3 font-bold text-white">Guardar preferencias</button><button id="reject" type="button" class="rounded-full border border-black/20 px-6 py-3 font-bold">Rechazar lo no esencial</button></div>
+    <p id="status" class="text-sm font-semibold text-[#315d42]" aria-live="polite"></p>
+  </form>
+  <div class="prose-policy mt-10"><h2>Gestión del consentimiento</h2><p>La preferencia se guarda en el almacenamiento local de su navegador con la clave <code>msp-cookie-preferences</code>. Borrar los datos del sitio eliminará esta elección. Desactivar cookies o almacenamiento local puede afectar algunas funciones, pero el contenido principal seguirá siendo accesible.</p></div>
+</main>
+<SiteFooter />
+<script is:inline>
+  const form = document.getElementById('cookie-form');
+  const analytics = document.getElementById('analytics');
+  const preferences = document.getElementById('preferences');
+  const reject = document.getElementById('reject');
+  const status = document.getElementById('status');
+  if (analytics instanceof HTMLInputElement && preferences instanceof HTMLInputElement) {
+    try {
+      const saved = JSON.parse(localStorage.getItem('msp-cookie-preferences') || '{}');
+      analytics.checked = saved.analytics === true;
+      preferences.checked = saved.preferences === true;
+    } catch (_) {}
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      localStorage.setItem('msp-cookie-preferences', JSON.stringify({ necessary:true, analytics:analytics.checked, preferences:preferences.checked, marketing:false }));
+      if (status) status.textContent = 'Preferencias guardadas. Los cambios se aplicarán por completo al recargar la página.';
+    });
+    reject?.addEventListener('click', () => {
+      analytics.checked = false;
+      preferences.checked = false;
+      localStorage.setItem('msp-cookie-preferences', JSON.stringify({ necessary:true, analytics:false, preferences:false, marketing:false }));
+      if (status) status.textContent = 'Se han rechazado todas las cookies no esenciales.';
+    });
+  }
+</script>
+</BaseLayout>

@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  --maiz: #f1b83b;
+  --achiote: #b6442f;
+  --coca: #315d42;
+  --tinta: #1f211e;
+  --piedra: #e9e1d4;
+  --papel: #fbf7ee;
+  --azul: #2b6375;
+}
+html { scroll-behavior: smooth; background: var(--papel); }
+body { margin: 0; color: var(--tinta); background: var(--papel); font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+::selection { background: var(--maiz); color: #241b0d; }
+.texture { background-image: radial-gradient(circle at 1px 1px, rgba(31,33,30,.09) 1px, transparent 0); background-size: 18px 18px; }
+.market-border { border-image: linear-gradient(90deg,var(--achiote),var(--maiz),var(--coca),var(--azul)) 1; }
+.display { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.03em; }
+.card { border: 1px solid rgba(31,33,30,.14); background: rgba(255,255,255,.64); box-shadow: 0 16px 40px rgba(60,44,26,.08); }
+.pill { border: 1px solid rgba(31,33,30,.16); background: rgba(251,247,238,.88); }
+.prose-policy h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem,2vw,1.8rem); margin-top: 2rem; margin-bottom: .7rem; }
+.prose-policy h3 { font-weight: 700; margin-top: 1.4rem; }
+.prose-policy p, .prose-policy li { line-height: 1.8; color: #46423b; }
+.prose-policy ul { padding-left: 1.2rem; list-style: disc; }

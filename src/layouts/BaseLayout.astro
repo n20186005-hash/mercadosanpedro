@@ -1,0 +1,57 @@
+---
+import '../styles.css';
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+  structuredData?: unknown | unknown[];
+}
+const { title, description, path = '/', image = 'https://upload.wikimedia.org/wikipedia/commons/3/36/San_Pedro_Market_in_Cusco%2C_Peru.jpg', structuredData } = Astro.props;
+const canonical = Astro.site ? new URL(path, Astro.site).toString() : undefined;
+const ogImage = image.startsWith('http') ? image : (Astro.site ? new URL(image, Astro.site).toString() : image);
+---
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#315d42" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/icons/favicon-16.png" sizes="16x16" type="image/png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{title}</title>
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+    <script is:inline>
+      const consent = localStorage.getItem('msp-cookie-preferences');
+      if (consent) {
+        try {
+          const preferences = JSON.parse(consent);
+          if (preferences.analytics === true) {
+            const s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP';
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function(){ window.dataLayer.push(arguments); };
+            window.gtag('js', new Date());
+            window.gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
+          }
+        } catch (_) {}
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
