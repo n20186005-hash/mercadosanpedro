@@ -1,0 +1,27 @@
+---
+import { guide } from '../content/guide';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  legalKey: 'privacidad' | 'terminos';
+}
+const { locale, legalKey } = Astro.props;
+const d = guide[locale].legal[legalKey];
+---
+<main class="mx-auto max-w-4xl px-5 py-16 lg:px-8">
+  <p class="text-sm font-bold uppercase tracking-[.2em] text-[#315d42]">{d.eyebrow}</p>
+  <h1 class="display mt-3 text-5xl font-bold">{d.h1}</h1>
+  <p class="mt-3 text-sm text-black/55">{d.updated}</p>
+  <div class="prose-policy mt-10">
+    <p>{d.intro}</p>
+    {d.blocks.map((b) => (
+      <div>
+        <h2>{b.h2}</h2>
+        {b.items.map((item) => item.type === 'p'
+          ? <p>{item.text}</p>
+          : <ul>{item.items.map((li) => <li>{li}</li>)}</ul>)}
+      </div>
+    ))}
+  </div>
+</main>

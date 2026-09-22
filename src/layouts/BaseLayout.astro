@@ -1,35 +1,55 @@
 ---
 import '../styles.css';
+import { HERO_IMAGE, SITE_NAME, SITE_NAME_EN } from '../data/site';
+import { pathFor, hreflangAlternates, htmlLang, ogLocale, otherLocale, type Locale, type RouteKey } from '../i18n';
+
 interface Props {
   title: string;
   description: string;
-  path?: string;
+  locale: Locale;
+  routeKey: RouteKey;
   image?: string;
   structuredData?: unknown | unknown[];
 }
-const { title, description, path = '/', image = 'https://upload.wikimedia.org/wikipedia/commons/3/36/San_Pedro_Market_in_Cusco%2C_Peru.jpg', structuredData } = Astro.props;
+const { title, description, locale, routeKey, image = HERO_IMAGE, structuredData } = Astro.props;
+
+const path = pathFor(locale, routeKey);
 const canonical = Astro.site ? new URL(path, Astro.site).toString() : undefined;
 const ogImage = image.startsWith('http') ? image : (Astro.site ? new URL(image, Astro.site).toString() : image);
+const ogImageAlt = `${SITE_NAME} in Cusco`;
+const ogSiteName = locale === 'es' ? SITE_NAME : SITE_NAME_EN;
+const alternates = hreflangAlternates(routeKey, Astro.site);
+const altLocale = otherLocale(locale);
 ---
 <!doctype html>
-<html lang="es-PE">
+<html lang={htmlLang[locale]}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#315d42" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     {canonical && <link rel="canonical" href={canonical} />}
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
     <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/icons/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="icon" href="/icons/favicon-16.png" sizes="16x16" type="image/png" />
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_PE" />
+    <meta property="og:locale" content={ogLocale[locale]} />
+    <meta property="og:locale:alternate" content={ogLocale[altLocale]} />
+    <meta property="og:site_name" content={ogSiteName} />
+    <meta name="application-name" content={ogSiteName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
     <title>{title}</title>
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <script is:inline>
@@ -48,6 +68,13 @@ const ogImage = image.startsWith('http') ? image : (Astro.site ? new URL(image, 
             window.gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
           }
         } catch (_) {}
+      }
+    </script>
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
       }
     </script>
   </head>

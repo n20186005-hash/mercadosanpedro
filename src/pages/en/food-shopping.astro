@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SubPage from '../../components/SubPage.astro';
+import { guide } from '../../content/guide';
+import { withSiteNameLocale } from '../../data/site';
+import { breadcrumbSchema, type Locale, type RouteKey } from '../../i18n';
+
+const locale: Locale = 'en';
+const routeKey: RouteKey = 'comida';
+const s = guide[locale].sub.comida;
+const title = withSiteNameLocale(guide[locale].nav.comida, locale);
+const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: s.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
+const bc = breadcrumbSchema(locale, routeKey, Astro.site);
+const structuredData = [bc, faqSchema].filter(Boolean);
+---
+<BaseLayout title={title} description={s.intro} locale="en" routeKey="comida" structuredData={structuredData}>
+<SiteHeader locale="en" routeKey="comida" />
+<SubPage locale="en" subKey="comida" />
+<SiteFooter locale="en" />
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import LegalPage from '../../components/LegalPage.astro';
+import { guide } from '../../content/guide';
+import { withSiteNameLocale } from '../../data/site';
+import type { Locale, RouteKey } from '../../i18n';
+
+const locale: Locale = 'en';
+const routeKey: RouteKey = 'privacidad';
+const d = guide[locale].legal.privacidad;
+const title = withSiteNameLocale(d.h1, locale);
+---
+<BaseLayout title={title} description={d.intro} locale="en" routeKey="privacidad">
+<SiteHeader locale="en" routeKey="privacidad" />
+<LegalPage locale="en" legalKey="privacidad" />
+<SiteFooter locale="en" />
+</BaseLayout>

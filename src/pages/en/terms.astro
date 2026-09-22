@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import LegalPage from '../../components/LegalPage.astro';
+import { guide } from '../../content/guide';
+import { withSiteNameLocale } from '../../data/site';
+import type { Locale, RouteKey } from '../../i18n';
+
+const locale: Locale = 'en';
+const routeKey: RouteKey = 'terminos';
+const d = guide[locale].legal.terminos;
+const title = withSiteNameLocale(d.h1, locale);
+---
+<BaseLayout title={title} description={d.intro} locale="en" routeKey="terminos">
+<SiteHeader locale="en" routeKey="terminos" />
+<LegalPage locale="en" legalKey="terminos" />
+<SiteFooter locale="en" />
+</BaseLayout>

@@ -1,0 +1,30 @@
+{
+  "name": "Mercado Central de San Pedro Cusco — Guía de Visita",
+  "short_name": "Mercado San Pedro",
+  "description": "Guía de visita independiente del Mercado Central de San Pedro en Cusco: historia, qué ver, comida, transporte, servicios, mapa y consejos.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1f211e",
+  "theme_color": "#315d42",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

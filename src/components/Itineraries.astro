@@ -1,0 +1,47 @@
+---
+import { guide } from '../content/guide';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const it = guide[locale].itineraries;
+const cardColor = ['text-[#315d42]', 'text-[#b6442f]', 'text-[#2b6375]'];
+---
+<section id="itinerarios" class="py-20">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <p class="text-sm font-bold uppercase tracking-[.2em] text-[#b6442f]">{it.eyebrow}</p>
+    <h2 class="display mt-3 max-w-4xl text-4xl font-bold sm:text-5xl">{it.h2}</h2>
+    <p class="mt-4 max-w-3xl leading-8 text-black/70">{it.lead}</p>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {it.cards.map((c, i) => (
+        <article class="card rounded-3xl p-7">
+          <p class={`text-xs font-bold uppercase tracking-[.18em] ${cardColor[i] ?? 'text-[#315d42]'}`}>{c.eyebrow}</p>
+          <h3 class="display mt-2 text-2xl font-bold">{c.title}</h3>
+          <ul class="mt-4 space-y-3 text-sm leading-7 text-black/70">
+            {c.items.map((li) => <li>{li}</li>)}
+          </ul>
+          <p class={`mt-4 text-sm font-bold ${cardColor[i] ?? 'text-[#315d42]'}`}>{c.time}</p>
+        </article>
+      ))}
+    </div>
+
+    <h3 class="display mt-14 max-w-4xl text-3xl font-bold">{it.rutasTitle}</h3>
+    <div class="mt-6 grid gap-6 lg:grid-cols-2">
+      {it.rutas.map((r, i) => (
+        <article class={`rounded-3xl p-7 ${i === 0 ? 'bg-[#f7e8c9]' : 'bg-[#d9e7dd]'}`}>
+          <p class={`text-xs font-bold uppercase tracking-[.18em] ${i === 0 ? 'text-[#7d2f21]' : 'text-[#315d42]'}`}>{r.eyebrow}</p>
+          <h4 class="display mt-2 text-2xl font-bold">{r.title}</h4>
+          <ol class="mt-4 space-y-2 text-sm leading-7 text-black/70 list-decimal pl-5">
+            {r.items.map((li) => <li>{li}</li>)}
+          </ol>
+          <p class={`mt-4 text-sm font-bold ${i === 0 ? 'text-[#7d2f21]' : 'text-[#315d42]'}`}>{r.time}</p>
+        </article>
+      ))}
+    </div>
+
+    <p class="mt-6 text-sm text-black/55">{it.note}</p>
+  </div>
+</section>

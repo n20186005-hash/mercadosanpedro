@@ -3,5 +3,6 @@
   "compilerOptions": {
     "allowJs": false,
     "baseUrl": "."
-  }
+  },
+  "exclude": ["src/worker.ts", "node_modules", "dist"]
 }

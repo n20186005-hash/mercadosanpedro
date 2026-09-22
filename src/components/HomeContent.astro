@@ -1,0 +1,317 @@
+---
+import { guide } from '../content/guide';
+import { MAPS_SHARE_URL, MAPS_EMBED_SRC, GOVT_TOURISM_URL, ATTRACTION_FULL_NAME, CITY_NAME } from '../data/site';
+import SeasonalStrategy from './SeasonalStrategy.astro';
+import Itineraries from './Itineraries.astro';
+import VisitorResponsibility from './VisitorResponsibility.astro';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const h = guide[locale].home;
+const c = guide[locale];
+
+const imageBase = 'https://upload.wikimedia.org/wikipedia/commons';
+const hero = `${imageBase}/6/69/Fachada_Mercado_San_Pedro%2C_Cusco.jpg`;
+const fruit = `${imageBase}/b/b5/Fruit_juices_heaven_at_the_Mercado_Central_de_San_Pedro.jpg`;
+const inside = `${imageBase}/3/36/San_Pedro_Market_in_Cusco%2C_Peru.jpg`;
+const mapEmbed = MAPS_EMBED_SRC;
+---
+<main>
+  <section class="relative isolate min-h-[76vh] overflow-hidden bg-[#1f211e] text-white">
+    <img src={hero} alt={`${ATTRACTION_FULL_NAME} - Main view in ${CITY_NAME}`} class="absolute inset-0 -z-20 h-full w-full object-cover" referrerpolicy="no-referrer" />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/55 to-black/20"></div>
+    <div class="mx-auto flex min-h-[76vh] max-w-7xl items-end px-5 pb-14 pt-24 lg:px-8 lg:pb-20">
+      <div class="max-w-4xl">
+        <p class="mb-4 inline-flex rounded-full border border-white/30 bg-black/25 px-4 py-2 text-sm font-bold backdrop-blur">{h.heroKicker}</p>
+        <h1 class="display text-5xl font-bold leading-[.98] sm:text-7xl lg:text-8xl" set:html={h.heroTitle}></h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/85">{h.heroLead}</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#visita" class="rounded-full bg-[#f1b83b] px-6 py-3 font-bold text-[#241b0d]">{h.heroCta1}</a>
+          <a href="#historia" class="rounded-full border border-white/45 bg-white/10 px-6 py-3 font-bold backdrop-blur">{h.heroCta2}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y-4 market-border bg-[#f7e8c9]">
+    <div class="mx-auto grid max-w-7xl gap-4 px-5 py-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
+      <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#7d2f21]">{h.facts.ingreso.label}</p><p class="mt-1 text-xl font-bold">{h.facts.ingreso.value}</p></div>
+      <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#7d2f21]">{h.facts.referencia.label}</p><p class="mt-1 text-xl font-bold">{h.facts.referencia.value}</p><p class="text-xs text-black/60">{h.facts.referencia.sub}</p></div>
+      <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#7d2f21]">{h.facts.altitud.label}</p><p class="mt-1 text-xl font-bold">{h.facts.altitud.value}</p></div>
+      <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#7d2f21]">{h.facts.direccion.label}</p><p class="mt-1 font-bold">{h.facts.direccion.value}</p></div>
+    </div>
+  </section>
+
+  <section id="acerca" class="py-20">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-[#b6442f]">{h.acerca.eyebrow}</p>
+      <h2 class="display mt-3 max-w-4xl text-4xl font-bold sm:text-5xl">{h.acerca.h2}</h2>
+      <p class="mt-6 max-w-3xl leading-8 text-black/70" set:html={h.acerca.p1}></p>
+      <nav aria-label="Jerarquía de ubicación" class="mt-6 flex flex-wrap items-center gap-2 text-sm font-semibold text-[#315d42]">
+        {h.acerca.hierarchy.map((item, i) => (<><span>{item}</span>{i < h.acerca.hierarchy.length - 1 && <span aria-hidden="true">→</span>}</>))}
+      </nav>
+      <p class="mt-6 max-w-3xl leading-8 text-black/70" set:html={h.acerca.p2}></p>
+    </div>
+  </section>
+
+  <section id="historia" class="texture py-20">
+    <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[.2em] text-[#b6442f]">{h.historia.eyebrow}</p>
+        <h2 class="display mt-3 text-4xl font-bold sm:text-5xl">{h.historia.h2}</h2>
+        <p class="mt-6 leading-8 text-black/70">{h.historia.p1}</p>
+        <p class="mt-4 leading-8 text-black/70">{h.historia.p2}</p>
+        <div class="mt-7 rounded-2xl border-l-4 border-[#315d42] bg-white/70 p-5">
+          <p class="font-bold">{h.historia.noteTitle}</p>
+          <p class="mt-2 text-sm leading-7 text-black/65">{h.historia.noteBody}</p>
+        </div>
+        <p class="mt-4 leading-8 text-black/70">{h.historia.p3}</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <img src={inside} alt={h.historia.imgInside} class="h-full min-h-80 w-full rounded-[2rem] object-cover sm:row-span-2" referrerpolicy="no-referrer" />
+        <img src={fruit} alt={h.historia.imgFruit} class="h-64 w-full rounded-[2rem] object-cover" referrerpolicy="no-referrer" />
+        <div class="rounded-[2rem] bg-[#315d42] p-7 text-white">
+          <p class="text-xs font-bold uppercase tracking-[.2em] text-white/60">{h.historia.culturalTitle}</p>
+          <p class="display mt-3 text-2xl font-bold">{h.historia.culturalBody}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#315d42] py-20 text-white">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-[#f1b83b]">{h.queObservar.eyebrow}</p>
+      <h2 class="display mt-3 max-w-4xl text-4xl font-bold sm:text-5xl">{h.queObservar.h2}</h2>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {h.queObservar.cards.map(([t, d]) => (
+          <article class="rounded-3xl border border-white/15 bg-white/8 p-6"><h3 class="display text-2xl font-bold">{t}</h3><p class="mt-3 text-sm leading-7 text-white/75">{d}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="visita" class="py-20">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[.75fr_1.25fr]">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.2em] text-[#b6442f]">{h.visita.eyebrow}</p>
+          <h2 class="display mt-3 text-4xl font-bold sm:text-5xl">{h.visita.h2}</h2>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2">
+          {h.visita.cards.map(([t, d]) => (
+            <article class="card rounded-3xl p-6"><h3 class="font-bold">{t}</h3><p class="mt-2 leading-7 text-black/65">{d}</p></article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clima" class="py-20">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-[#315d42]">{h.clima.eyebrow}</p>
+      <h2 class="display mt-3 max-w-4xl text-4xl font-bold sm:text-5xl">{h.clima.h2}</h2>
+      <p class="mt-4 max-w-3xl leading-8 text-black/70">{h.clima.lead}</p>
+
+      <div id="w-loading" class="mt-8 rounded-3xl border border-black/10 bg-white/60 p-8 text-black/60">{h.clima.loading}</div>
+      <div id="w-error" hidden class="mt-8 rounded-3xl border border-[#b6442f]/30 bg-[#b6442f]/5 p-8 text-[#b6442f]">{h.clima.error}</div>
+
+      <div id="w-content" hidden class="mt-8 space-y-6">
+        <div class="grid gap-6 lg:grid-cols-[1.1fr_1.4fr]">
+          <div class="rounded-3xl bg-[#315d42] p-8 text-white">
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-white/60">{h.clima.now}</p>
+            <div id="w-now" class="mt-3 text-6xl font-bold display">–</div>
+            <p id="w-now-cond" class="mt-2 text-xl"></p>
+            <dl id="w-now-details" class="mt-6 grid grid-cols-2 gap-4 text-sm"></dl>
+          </div>
+          <div class="rounded-3xl border border-black/10 bg-white/60 p-6">
+            <p class="text-xs font-bold uppercase tracking-[.2em] text-[#7d2f21]">{h.clima.next}</p>
+            <ul id="w-daily" class="mt-4 divide-y divide-black/10"></ul>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-black/10 bg-white/60 p-6">
+          <p class="text-xs font-bold uppercase tracking-[.2em] text-[#315d42]">{h.clima.advice}</p>
+          <div id="w-risk" hidden class="mt-4 rounded-2xl border-l-4 border-[#b6442f] bg-[#b6442f]/8 p-4 text-[#7d2f21]"></div>
+          <div class="mt-4 grid gap-6 md:grid-cols-3">
+            <div id="blk-travel"><p class="font-bold text-[#315d42]">{h.clima.blocks.travel}</p><ul id="w-travel" class="mt-2 space-y-2 text-sm leading-7 text-black/70"></ul></div>
+            <div id="blk-play"><p class="font-bold text-[#315d42]">{h.clima.blocks.play}</p><ul id="w-play" class="mt-2 space-y-2 text-sm leading-7 text-black/70"></ul></div>
+            <div id="blk-items"><p class="font-bold text-[#315d42]">{h.clima.blocks.items}</p><ul id="w-items" class="mt-2 space-y-2 text-sm leading-7 text-black/70"></ul></div>
+          </div>
+          <p class="mt-5 text-xs text-black/45">{h.clima.note}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const LANG = (document.documentElement.lang || 'es').startsWith('en') ? 'en' : 'es';
+    const dir = (d: number) => { const p = ['N','NE','E','SE','S','SO','O','NO']; return p[Math.round((d % 360) / 45) % 8]; };
+    const fmt = (n: number | null | undefined) => (n === null || n === undefined || Number.isNaN(n as number)) ? '–' : Math.round(n as number);
+    const dayLabel = (s: string) => {
+      try { return new Date(s + 'T00:00').toLocaleDateString(LANG === 'en' ? 'en-US' : 'es-PE', { weekday: 'short', day: 'numeric', month: 'short' }); } catch (e) { return s; }
+    };
+    function render(d: any) {
+      const cur = d.current || {};
+      const now = document.getElementById('w-now');
+      if (now) now.textContent = (cur.temp !== undefined ? Math.round(cur.temp) : '–') + '°';
+      const cd = document.getElementById('w-now-cond');
+      if (cd) cd.textContent = (cur.glyph || '') + ' ' + (cur.condLabel || '') + (cur.isDay === false ? ' (night)' : '');
+      const dl = document.getElementById('w-now-details');
+      if (dl) {
+        dl.innerHTML = '';
+        const rows = [['Feels', (cur.feels !== undefined ? Math.round(cur.feels) + '°' : '–')], ['Humidity', (cur.humidity !== undefined ? Math.round(cur.humidity) + '%' : '–')], ['Wind', (cur.wind !== undefined ? Math.round(cur.wind) + ' km/h ' + dir(cur.windDir || 0) : '–')], ['Rain now', (cur.precip !== undefined ? (cur.precip > 0 ? cur.precip + ' mm' : 'dry') : '–')]];
+        for (const [k, v] of rows) { const dt = document.createElement('div'); dt.innerHTML = '<dt class="text-white/60">' + k + '</dt><dd class="font-bold">' + v + '</dd>'; dl.appendChild(dt); }
+      }
+      const a = d.advisory || {};
+      const risk = document.getElementById('w-risk');
+      if (risk) {
+        if (a.risk && a.risk.length) {
+          risk.hidden = false; risk.innerHTML = '';
+          const hh = document.createElement('p'); hh.className = 'font-bold'; hh.textContent = LANG === 'en' ? '⚠️ Risk' : '⚠️ Riesgo'; risk.appendChild(hh);
+          for (const t of a.risk) { const p = document.createElement('p'); p.className = 'mt-1'; p.textContent = '• ' + t; risk.appendChild(p); }
+        } else { risk.hidden = true; }
+      }
+      const fill = (listId: string, blkId: string, arr: string[] | undefined) => {
+        const ul = document.getElementById(listId); const blk = document.getElementById(blkId);
+        if (!ul) return; ul.innerHTML = '';
+        if (arr && arr.length) { if (blk) blk.hidden = false; for (const t of arr) { const li = document.createElement('li'); li.className = 'flex gap-2'; li.textContent = '• ' + t; ul.appendChild(li); } }
+        else if (blk) { blk.hidden = true; }
+      };
+      fill('w-travel', 'blk-travel', a.travel);
+      fill('w-play', 'blk-play', a.play);
+      fill('w-items', 'blk-items', a.items);
+      const ul = document.getElementById('w-daily');
+      if (ul) {
+        ul.innerHTML = '';
+        (d.daily || []).forEach((day: any) => {
+          const li = document.createElement('li');
+          li.className = 'flex items-center justify-between gap-3 py-3';
+          li.innerHTML = '<span class="w-28 shrink-0 text-sm font-semibold">' + dayLabel(day.date) + '</span><span class="text-xl">' + (day.glyph || '') + '</span><span class="flex-1 text-sm">' + (day.condLabel || '') + '</span><span class="text-sm font-bold whitespace-nowrap">' + fmt(day.tmax) + '° / ' + fmt(day.tmin) + '°</span><span class="w-16 text-right text-xs text-black/55">rain ' + fmt(day.precipProb) + '%</span>';
+          ul.appendChild(li);
+        });
+      }
+    }
+    async function load() {
+      const loading = document.getElementById('w-loading');
+      try {
+        const res = await fetch('/api/weather?lang=' + LANG);
+        if (!res.ok) throw new Error('bad');
+        const d = await res.json();
+        render(d);
+        const content = document.getElementById('w-content');
+        if (content) content.hidden = false;
+        if (loading) loading.remove();
+      } catch (e) {
+        if (loading) loading.remove();
+        const err = document.getElementById('w-error');
+        if (err) err.hidden = false;
+      }
+    }
+    load();
+  </script>
+
+  <section id="transporte" class="bg-[#efe6d7] py-20">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-[#315d42]">{h.transporte.eyebrow}</p>
+      <h2 class="display mt-3 text-4xl font-bold sm:text-5xl">{h.transporte.h2}</h2>
+      <div class="mt-10 grid gap-5 lg:grid-cols-4">
+        {h.transporte.cards.map(([t, d]) => (
+          <article class="rounded-3xl bg-white p-6"><h3 class="display text-2xl font-bold">{t}</h3><p class="mt-3 text-sm leading-7 text-black/65">{d}</p></article>
+        ))}
+      </div>
+      <p class="mt-6 text-sm text-black/55">{h.transporte.note}</p>
+    </div>
+  </section>
+
+  <SeasonalStrategy locale={locale} />
+
+  <section id="servicios" class="py-20">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-[#b6442f]">{h.servicios.eyebrow}</p>
+      <h2 class="display mt-3 max-w-4xl text-4xl font-bold sm:text-5xl">{h.servicios.h2}</h2>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {h.servicios.cards.map(([t, d]) => (
+          <article class="card rounded-3xl p-6"><h3 class="font-bold">{t}</h3><p class="mt-2 text-sm leading-7 text-black/65">{d}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Itineraries locale={locale} />
+
+  <section class="bg-[#b6442f] py-20 text-white">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-2">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.2em] text-[#f6cf77]">{h.comer.eyebrow}</p>
+          <h2 class="display mt-3 text-4xl font-bold">{h.comer.h2}</h2>
+          <p class="mt-5 leading-8 text-white/80">{h.comer.lead}</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            {h.comer.tags.map((x) => <span class="rounded-full border border-white/30 px-3 py-2 text-sm">{x}</span>)}
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.2em] text-[#f6cf77]">{h.comer.eyebrow}</p>
+          <h2 class="display mt-3 text-4xl font-bold">{h.comer.cercaTitle}</h2>
+          <ul class="mt-6 space-y-4 text-white/80">
+            {h.comer.cercaItems.map((it) => (
+              <li><strong class="text-white">{it.strong}</strong> {it.text}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <VisitorResponsibility locale={locale} />
+
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="grid gap-6 lg:grid-cols-3">
+        <article class="rounded-3xl bg-[#f7e8c9] p-7"><p class="text-xs font-bold uppercase tracking-[.18em] text-[#7d2f21]">{h.entrada.cards[0].eyebrow}</p><h2 class="display mt-2 text-3xl font-bold">{h.entrada.cards[0].title}</h2><p class="mt-4 leading-7 text-black/65">{h.entrada.cards[0].body}</p></article>
+        <article class="rounded-3xl bg-[#d9e7dd] p-7"><p class="text-xs font-bold uppercase tracking-[.18em] text-[#315d42]">{h.entrada.cards[1].eyebrow}</p><h2 class="display mt-2 text-3xl font-bold">{h.entrada.cards[1].title}</h2><p class="mt-4 leading-7 text-black/65">{h.entrada.cards[1].body}</p></article>
+        <article class="rounded-3xl bg-[#dce7eb] p-7"><p class="text-xs font-bold uppercase tracking-[.18em] text-[#2b6375]">{h.entrada.cards[2].eyebrow}</p><h2 class="display mt-2 text-3xl font-bold">{h.entrada.cards[2].title}</h2><p class="mt-4 leading-7 text-black/65">{h.entrada.cards[2].body}</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#1f211e] py-20 text-white">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-[.65fr_1.35fr]">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[.2em] text-[#f1b83b]">{h.ubicacion.eyebrow}</p>
+          <h2 class="display mt-3 text-4xl font-bold">{h.ubicacion.h2}</h2>
+          <p class="mt-4 text-white/70">{h.ubicacion.addr}</p>
+          <a href={MAPS_SHARE_URL} rel="noopener noreferrer" class="mt-6 inline-block rounded-full bg-[#f1b83b] px-5 py-3 font-bold text-[#241b0d]">{h.ubicacion.mapsCta}</a>
+          <p class="mt-4 text-sm text-white/70">{h.ubicacion.govtText} <a href={GOVT_TOURISM_URL} target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 text-[#f1b83b]">{h.ubicacion.govtName}</a>.</p>
+        </div>
+        <div class="overflow-hidden rounded-[2rem] border border-white/15">
+          <iframe src={mapEmbed} title="Mapa del Mercado Central de San Pedro, Cusco" width="100%" height="450" style="border:0" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-20">
+    <div class="mx-auto max-w-5xl px-5 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-[#b6442f]">{h.faq.eyebrow}</p>
+      <h2 class="display mt-3 text-4xl font-bold sm:text-5xl">{h.faq.h2}</h2>
+      <div class="mt-8 divide-y divide-black/10 border-y border-black/10">
+        {h.faq.items.map(([q, a]) => (
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold"><span>{q}</span><span class="text-xl group-open:rotate-45">+</span></summary><p class="max-w-3xl pt-3 leading-7 text-black/65">{a}</p></details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#efe6d7] py-14">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <h2 class="display text-3xl font-bold">{h.fuentes.h2}</h2>
+      <p class="mt-3 max-w-4xl leading-7 text-black/65">{h.fuentes.lead}</p>
+      <p class="mt-4 text-sm text-black/55">{h.fuentes.photos}</p>
+    </div>
+  </section>
+</main>

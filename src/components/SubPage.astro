@@ -1,0 +1,59 @@
+---
+import { guide } from '../content/guide';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+  subKey: 'horario' | 'comida' | 'seguridad';
+}
+const { locale, subKey } = Astro.props;
+const s = guide[locale].sub[subKey];
+---
+<main>
+  <section class="relative isolate overflow-hidden bg-[#1f211e] text-white">
+    <div class="mx-auto max-w-7xl px-5 pb-14 pt-24 lg:px-8 lg:pb-20">
+      <p class="mb-4 inline-flex rounded-full border border-white/30 bg-black/25 px-4 py-2 text-sm font-bold backdrop-blur">{s.eyebrow}</p>
+      <h1 class="display max-w-4xl text-4xl font-bold leading-[1.05] sm:text-6xl">{s.h1}</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-white/85">{s.intro}</p>
+    </div>
+  </section>
+
+  <section class="border-y-4 market-border bg-[#f7e8c9]">
+    <div class="mx-auto grid max-w-7xl gap-4 px-5 py-6 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
+      {s.facts.map((f) => (
+        <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#7d2f21]">{f.label}</p><p class="mt-1 text-xl font-bold">{f.value}</p>{f.sub && <p class="text-xs text-black/60">{f.sub}</p>}</div>
+      ))}
+    </div>
+  </section>
+
+  {s.sections.map((sec) => (
+    <section id={sec.id} class="py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <p class="text-sm font-bold uppercase tracking-[.2em] text-[#b6442f]">{sec.eyebrow}</p>
+        <h2 class="display mt-3 text-4xl font-bold sm:text-5xl">{sec.h2}</h2>
+        {sec.lead && <p class="mt-4 max-w-3xl leading-8 text-black/70">{sec.lead}</p>}
+        {sec.body && <div class="mt-6 max-w-3xl space-y-4 leading-8 text-black/70">{sec.body.map((p) => <p>{p}</p>)}</div>}
+        {sec.cards && (
+          <div class="mt-10 grid gap-5 lg:grid-cols-2">
+            {sec.cards.map(([t, d]) => (
+              <article class="card rounded-3xl p-6"><h3 class="font-bold">{t}</h3><p class="mt-2 leading-7 text-black/65">{d}</p></article>
+            ))}
+          </div>
+        )}
+        {sec.note && <p class="mt-6 text-sm text-black/55">{sec.note}</p>}
+      </div>
+    </section>
+  ))}
+
+  <section class="py-20">
+    <div class="mx-auto max-w-5xl px-5 lg:px-8">
+      <p class="text-sm font-bold uppercase tracking-[.2em] text-[#b6442f]">{s.faqEyebrow}</p>
+      <h2 class="display mt-3 text-4xl font-bold sm:text-5xl">{s.faqTitle}</h2>
+      <div class="mt-8 divide-y divide-black/10 border-y border-black/10">
+        {s.faq.map(([q, a]) => (
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold"><span>{q}</span><span class="text-xl group-open:rotate-45">+</span></summary><p class="max-w-3xl pt-3 leading-7 text-black/65">{a}</p></details>
+        ))}
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,7 +1,37 @@
-node_modules/
+# Build output
 dist/
 .astro/
-.wrangler/
-.DS_Store
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
 .env
 .env.*
+!.env.example
+
+# Wrangler / Cloudflare Workers
+.wrangler/
+.dev.vars
+
+# Local helper scripts & temp markers (not part of the site)
+scripts/run-install.ps1
+install-*.txt
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp

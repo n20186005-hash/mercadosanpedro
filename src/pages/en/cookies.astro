@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CookiesPage from '../../components/CookiesPage.astro';
+import { guide } from '../../content/guide';
+import { withSiteNameLocale } from '../../data/site';
+import type { Locale, RouteKey } from '../../i18n';
+
+const locale: Locale = 'en';
+const routeKey: RouteKey = 'cookies';
+const d = guide[locale].legal.cookies;
+const title = withSiteNameLocale(d.h1, locale);
+---
+<BaseLayout title={title} description={d.intro} locale="en" routeKey="cookies">
+<SiteHeader locale="en" routeKey="cookies" />
+<CookiesPage locale="en" />
+<SiteFooter locale="en" />
+</BaseLayout>

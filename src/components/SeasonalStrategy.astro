@@ -1,0 +1,45 @@
+---
+import { guide } from '../content/guide';
+import type { Locale } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const s = guide[locale].seasonal;
+const rowColor = ['text-[#315d42]', 'text-[#b6442f]', 'text-[#2b6375]'];
+---
+<section id="temporadas" class="bg-[#efe6d7] py-20">
+  <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <p class="text-sm font-bold uppercase tracking-[.2em] text-[#315d42]">{s.eyebrow}</p>
+    <h2 class="display mt-3 max-w-4xl text-4xl font-bold sm:text-5xl">{s.h2}</h2>
+    <p class="mt-4 max-w-3xl leading-8 text-black/70">{s.lead}</p>
+
+    <div class="mt-10 overflow-x-auto rounded-3xl border border-black/10 bg-white/70">
+      <table class="w-full min-w-[760px] border-collapse text-left text-sm">
+        <thead class="bg-[#315d42] text-white">
+          <tr>
+            {s.cols.map((c) => <th class="px-5 py-4 font-bold">{c}</th>)}
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-black/10">
+          {s.rows.map((r, i) => (
+            <tr class="align-top">
+              <td class={`px-5 py-4 font-bold ${rowColor[i] ?? 'text-[#315d42]'}`}>{r.epoca}{r.epocaSub && <br /><span class="text-xs font-normal text-black/55">{r.epocaSub}</span>}</td>
+              <td class="px-5 py-4">{r.meses}</td>
+              <td class="px-5 py-4 leading-7 text-black/70">{r.clima}</td>
+              <td class="px-5 py-4">{r.diaNoche}</td>
+              <td class="px-5 py-4 leading-7 text-black/70">{r.mercado}</td>
+              <td class="px-5 py-4 leading-7 text-black/70">{r.recom}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-6 rounded-2xl border-l-4 border-[#315d42] bg-white/70 p-5">
+      <p class="font-bold">{s.noteTitle}</p>
+      <p class="mt-2 text-sm leading-7 text-black/65">{s.noteBody}</p>
+    </div>
+  </div>
+</section>
