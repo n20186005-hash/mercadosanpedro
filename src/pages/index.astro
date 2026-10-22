@@ -6,19 +6,19 @@ import HomeContent from '../components/HomeContent.astro';
 import { guide } from '../content/guide';
 import {
   SITE_URL, ATTRACTION_FULL_NAME, ATTRACTION_SHORT_NAME, CITY_NAME, STATE_PROVINCE,
-  COUNTRY_NAME, STREET_ADDRESS, POSTAL_CODE, COUNTRY_CODE_2LETTER, PLUS_CODE,
-  LATITUDE, LONGITUDE, MAPS_SHARE_URL, GOVT_TOURISM_URL, NEARBY_LANDMARK_1, NEARBY_LANDMARK_2,
-  RATING_VALUE, REVIEW_COUNT, HERO_IMAGE, OPENING_HOURS, SITE_NAME
+  COUNTRY_NAME, STREET_ADDRESS, POSTAL_CODE, COUNTRY_CODE_2LETTER,
+  LATITUDE, LONGITUDE, MAPS_SHARE_URL, GOVT_TOURISM_URL,
+  HERO_IMAGE
 } from '../data/site';
 import type { Locale } from '../i18n';
 
 const locale: Locale = 'es';
 const faq = guide[locale].home.faq.items;
-const insideImg = 'https://upload.wikimedia.org/wikipedia/commons/3/36/San_Pedro_Market_in_Cusco%2C_Peru.jpg';
+const insideImg = `${SITE_URL}/images/interior.webp`;
 
 const placeSchema = {
   '@context': 'https://schema.org',
-  '@type': ['TouristAttraction', 'LocalBusiness'],
+  '@type': 'TouristAttraction',
   '@id': `${SITE_URL}/#attraction`,
   name: ATTRACTION_FULL_NAME,
   alternateName: [ATTRACTION_SHORT_NAME, `${CITY_NAME} ${ATTRACTION_FULL_NAME}`],
@@ -27,15 +27,12 @@ const placeSchema = {
   image: [HERO_IMAGE, insideImg],
   address: { '@type': 'PostalAddress', streetAddress: STREET_ADDRESS, addressLocality: CITY_NAME, addressRegion: STATE_PROVINCE, postalCode: POSTAL_CODE, addressCountry: COUNTRY_CODE_2LETTER },
   geo: { '@type': 'GeoCoordinates', latitude: LATITUDE, longitude: LONGITUDE },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: RATING_VALUE, reviewCount: REVIEW_COUNT },
-  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: OPENING_HOURS.opens, closes: OPENING_HOURS.closes }],
-  isAccessibleForFree: true,
   hasMap: MAPS_SHARE_URL,
   sameAs: [MAPS_SHARE_URL, GOVT_TOURISM_URL]
 };
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
 ---
-<BaseLayout title={SITE_NAME} description={`Descubre el ${ATTRACTION_FULL_NAME}, el icónico mercado en ${CITY_NAME}, ${STATE_PROVINCE}, ${COUNTRY_NAME}. Consulta el clima en tiempo real, el mapa de ubicación, horarios, lugares cercanos como ${NEARBY_LANDMARK_1} y consejos de viaje.`} locale="es" routeKey="home" structuredData={[placeSchema, faqSchema]}>
+<BaseLayout title="Mercado San Pedro Cusco: horarios, ubicación y comida" description="Guía independiente del Mercado San Pedro: horarios de referencia con fuentes, dirección, cómo llegar, comida, compras y consejos para la visita." locale="es" routeKey="home" structuredData={[placeSchema, faqSchema]}>
 <SiteHeader locale="es" routeKey="home" />
 <HomeContent locale="es" />
 <SiteFooter locale="es" />

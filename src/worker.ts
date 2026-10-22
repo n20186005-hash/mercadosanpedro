@@ -16,8 +16,8 @@ interface Env {
   ASSETS: AssetsBinding;
 }
 
-const DEFAULT_LAT = -13.520957686847316;
-const DEFAULT_LON = -71.982647;
+const DEFAULT_LAT = -13.5209577;
+const DEFAULT_LON = -71.9826676;
 const CACHE_TTL_SECONDS = 1800;
 
 type Lang = 'es' | 'en';
@@ -108,10 +108,10 @@ function buildAdvice(t: AdviceInput, lang: Lang): { travel: string[]; play: stri
         modPlay: 'Avoid staying outside long; use the market and covered venues.',
         modItem: 'Raincoat',
         heavyRisk: 'Heavy rain: avoid gullies, low areas and poorly drained streets.',
-        heavyPlay: 'Boat rides or cable cars may be suspended (depends on operator).',
+        heavyPlay: 'Check official conditions and any operator changes before an outdoor trip.',
         heavyItem: 'Raincoat (better than a long umbrella if windy)',
         stormRisk: 'Thunderstorm: do not walk hills, nor shelter under trees or metal structures.',
-        stormPlay: 'Water and height activities will likely close.',
+        stormPlay: 'Check official warnings; do not infer closures from this forecast.',
         warmTravel: 'Somewhat warm day: avoid midday exposure.',
         warmItem: 'Light clothes and water',
         uvStrongTravel: 'The high-altitude sun is very strong: protect yourself.',
@@ -124,7 +124,7 @@ function buildAdvice(t: AdviceInput, lang: Lang): { travel: string[]; play: stri
         coldDayTravel: 'Cold day: mind your coat.',
         coldDayItem: 'Thick coat',
         windTravel: 'Noticeable wind: your hat may fly off; avoid long, loose skirts or shawls.',
-        windPlay: 'High or water-level walks may be affected by wind.',
+        windPlay: 'Exposed outdoor routes may be affected by wind.',
         windRisk: 'Strong wind: stay away from signs, awnings and exposed open areas.',
         windRiskPlay: 'If wind is strong, prefer sheltered areas and avoid exposed viewpoints.',
         clearTravel: 'Clear day: ideal to walk and photograph.',
@@ -149,10 +149,10 @@ function buildAdvice(t: AdviceInput, lang: Lang): { travel: string[]; play: stri
         modPlay: 'Evita estar mucho tiempo afuera; aprovecha el mercado y recintos cubiertos.',
         modItem: 'Impermeable',
         heavyRisk: 'Lluvia fuerte: evita quebradas, zonas bajas y calles con mal drenaje.',
-        heavyPlay: 'Paseos en bote o teleférico podrían suspenderse (según el operador).',
+        heavyPlay: 'Consulta las condiciones oficiales y cualquier cambio del operador antes de una salida al aire libre.',
         heavyItem: 'Impermeable (mejor que paraguas largo si hay viento)',
         stormRisk: 'Tormenta eléctrica: no camines por cerros, ni te refugies bajo árboles o estructuras metálicas.',
-        stormPlay: 'Actividades acuáticas y en altura probablemente cierren.',
+        stormPlay: 'Consulta avisos oficiales; este pronóstico no confirma cierres.',
         warmTravel: 'Día algo cálido: evita la exposición al mediodía.',
         warmItem: 'Ropa ligera y agua',
         uvStrongTravel: 'El sol a gran altitud es muy fuerte: protégete.',
@@ -165,7 +165,7 @@ function buildAdvice(t: AdviceInput, lang: Lang): { travel: string[]; play: stri
         coldDayTravel: 'Día frío: cuida el abrigo.',
         coldDayItem: 'Abrigo grueso',
         windTravel: 'Viento notable: la gorra se puede volar; evita faldas o chal largos y sueltos.',
-        windPlay: 'Paseos en altura o sobre el agua pueden verse afectados por el viento.',
+        windPlay: 'Los tramos exteriores expuestos pueden verse afectados por el viento.',
         windRisk: 'Viento fuerte: aléjate de carteles, toldos y sectores abiertos expuestos.',
         windRiskPlay: 'Si hace viento fuerte, prefiere zonas resguardadas y evita miradores expuestos.',
         clearTravel: 'Día despejado: ideal para recorrer y fotografiar.',
@@ -318,6 +318,7 @@ function transform(data: any, lat: number, lon: number, lang: Lang) {
   const curW = wmo(cur.weather_code);
   return {
     updated: cur.time ?? null,
+    timezone: data.timezone ?? null,
     current: {
       temp: cur.temperature_2m,
       feels: cur.apparent_temperature,
@@ -369,7 +370,9 @@ async function getWeather(lat: number, lon: number, lang: Lang, ctx: WorkerConte
     });
   }
 
-  const data = await upstream.json();
+  let data: any;
+  try { data = await upstream.json(); } catch { return Response.json({ error: 'weather unavailable' }, { status: 502 }); }
+  if (!Number.isFinite(data?.current?.temperature_2m) || !Array.isArray(data?.daily?.time) || !data.daily.time.length) return Response.json({ error: 'weather unavailable' }, { status: 502 });
   const payload = JSON.stringify(transform(data, lat, lon, lang));
   const response = new Response(payload, {
     headers: {
@@ -382,10 +385,23 @@ async function getWeather(lat: number, lon: number, lang: Lang, ctx: WorkerConte
   return response;
 }
 
+async function notFound(request: Request, env: Env): Promise<Response> {
+  const url = new URL(request.url); url.pathname = '/404.html'; url.search = '';
+  const asset = await env.ASSETS.fetch(new Request(url, { method: 'GET' }));
+  const headers = new Headers(asset.headers); headers.set('X-Robots-Tag', 'noindex, follow'); headers.set('Cache-Control', 'no-store');
+  return new Response(request.method === 'HEAD' ? null : asset.body, { status: 404, headers });
+}
+
 export default {
   async fetch(request: Request, env: Env, ctx: WorkerContext): Promise<Response> {
     const url = new URL(request.url);
 
+    // Canonical transport precedes error aliases and preserves path/query.
+    if (url.hostname === 'www.mercadosanpedro.com' || url.hostname === 'mercadosanpedro.com' && url.protocol !== 'https:') {
+      url.protocol = 'https:'; url.hostname = 'mercadosanpedro.com'; return Response.redirect(url.toString(), 301);
+    }
+    if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
+    if (['/404', '/404/', '/404.html', '/404.html/'].includes(url.pathname)) return notFound(request, env);
     if (url.pathname === '/api/weather') {
       let lat = DEFAULT_LAT;
       let lon = DEFAULT_LON;
@@ -397,10 +413,12 @@ export default {
       }
       const qLang = url.searchParams.get('lang');
       const lang: Lang = qLang === 'en' ? 'en' : 'es';
-      return getWeather(lat, lon, lang, ctx);
+      const response = await getWeather(lat, lon, lang, ctx);
+      return request.method === 'HEAD' ? new Response(null, response) : response;
     }
 
     // Everything else is served from the static Astro build.
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+    return response.status === 404 ? notFound(request, env) : response;
   }
 };

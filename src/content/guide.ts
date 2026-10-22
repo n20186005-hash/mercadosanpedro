@@ -105,7 +105,7 @@ export const guide: Record<Locale, GuideContent> = {
     nav: { home: 'Inicio', horario: 'Horario y cómo llegar', comida: 'Comida y compras', seguridad: 'Seguridad', maps: 'Abrir mapa' },
     footer: {
       disclaimer1: 'Este sitio es un proyecto independiente y sin fines de lucro de información para visitantes. No está afiliado a la Municipalidad Provincial del Cusco, a organismos gubernamentales ni a organizaciones oficiales.',
-      disclaimer2: 'La información del atractivo se contrasta con fuentes públicas de la Municipalidad Provincial del Cusco, la Gerencia Regional de Comercio Exterior, Turismo y Artesanía del Cusco y el Ministerio de Comercio Exterior y Turismo del Perú (MINCETUR). No contiene recomendaciones comerciales.',
+      disclaimer2: 'Fuentes consultadas el 22 de octubre de 2026 (UTC): inventario MINCETUR, PROMPERÚ y ficha de Google Maps. Los horarios publicados difieren; consulta las fuentes y vuelve a confirmar antes de ir.',
       copyright: '© 2026 Guía Cultural del Mercado San Pedro de Cusco. Todos los derechos reservados.',
       sub: 'Guía no oficial del Mercado Central de San Pedro, distrito y provincia del Cusco, Perú.',
       legal: [ { label: 'Privacidad', key: 'privacidad' }, { label: 'Términos', key: 'terminos' }, { label: 'Cookie', key: 'cookies' } ]
@@ -113,31 +113,31 @@ export const guide: Record<Locale, GuideContent> = {
     home: {
       heroKicker: 'Mercado histórico · Centro Histórico del Cusco',
       heroTitle: `Mercado Central de San Pedro <span class="text-[#f1b83b]">(Cusco)</span>`,
-      heroLead: 'San Pedro, el mercado donde Cusco sigue conversando. Frutas, panes, granos, hierbas, comidas populares y artesanía bajo una gran cubierta: una puerta directa a la vida cotidiana andina, a pocas cuadras del corazón monumental de la ciudad.',
+      heroLead: 'Un mercado de abastos cubierto del barrio de San Pedro: frutas, panes, granos, jugos, comidas y artesanía. Esta guía independiente distingue el mercado de sus puestos y reúne ubicación, horarios de referencia y consejos para planificar la visita.',
       heroCta1: 'Planificar la visita',
       heroCta2: 'Conocer su historia',
       facts: {
         ingreso: { label: 'Ingreso', value: 'Libre' },
-        referencia: { label: 'Referencia de visita', value: '06:00–18:00', sub: 'Horario de referencia de inventario turístico; puede variar.' },
+        referencia: { label: 'Referencia de visita', value: 'L–S 06:30–18:00', sub: 'Dom. 06:30–16:00 · Google Maps, 22 oct. 2026 UTC. Confirma; cada puesto puede variar.' },
         altitud: { label: 'Altitud', value: '≈ 3,400 m' },
         direccion: { label: 'Dirección', value: 'Ca. Thupaq Amaru 477, Cusco' }
       },
       acerca: {
         eyebrow: 'Acerca del atractivo',
         h2: 'Bienvenido al Mercado Central de San Pedro',
-        p1: 'Bienvenido al <strong>Mercado Central de San Pedro</strong>, ampliamente conocido como el <strong>Mercado San Pedro</strong>. Ubicado en el corazón de <strong>Cusco</strong>, <strong>Cusco</strong>, <strong>Perú</strong>, este destino es un polo principal para quienes visitan la región y una puerta directa a la vida cotidiana andina.',
+        p1: 'El <strong>Mercado Central de San Pedro</strong>, conocido como <strong>Mercado San Pedro</strong>, es un mercado de abastos del barrio tradicional de San Pedro, en el centro histórico de Cusco, Perú. La guía se refiere al recinto completo y no representa ni recomienda un puesto específico.',
         hierarchy: [ 'Mercado Central de San Pedro', 'Cusco', 'Cusco', 'Perú' ],
-        p2: 'Al visitar el <strong>Mercado Central de San Pedro</strong>, se pueden recorrer con facilidad otros hitos y puntos de interés históricos de los alrededores, entre ellos la <strong>Plazoleta e Iglesia de San Pedro</strong> y la <strong>Plaza de Armas del Cusco</strong>.'
+        p2: 'El inventario MINCETUR sitúa el mercado frente a la estación de San Pedro y estima unos 700 m a pie desde la <strong>Plaza de Armas</strong>. El tiempo depende de la ruta, el tránsito y las necesidades de cada persona.'
       },
       historia: {
         eyebrow: 'Historia y contexto',
         h2: 'Un mercado moderno dentro de un barrio con siglos de memoria.',
-        p1: 'San Pedro es uno de los barrios tradicionales del centro histórico cusqueño. La documentación municipal recuerda que en este sector existió desde el siglo XVI el Hospital de Naturales y que el barrio fue consolidando una identidad propia alrededor de sus espacios religiosos, comerciales y de conexión con otras zonas de la ciudad.',
-        p2: 'A comienzos del siglo XX, las autoridades impulsaron el traslado del abastecimiento que se realizaba en las plazas del centro hacia un recinto específico. El mercado fue inaugurado en 1925 durante la gestión municipal de Manuel Silvestre Frisancho, convirtiéndose en el mercado cerrado de abastos más antiguo del Cusco.',
+        p1: 'El inventario turístico de MINCETUR ubica el mercado en el barrio tradicional de San Pedro, frente a la estación ferroviaria. Es un espacio de abastecimiento cotidiano, además de una visita cultural.',
+        p2: 'Según ese inventario, se inauguró el 7 de junio de 1925 durante la gestión del alcalde Manuel Silvestre Frisancho y es el mercado cerrado de abastos más antiguo del Cusco.',
         noteTitle: 'Importante sobre la autoría arquitectónica',
-        noteBody: 'La atribución popular a Gustave Eiffel aparece de forma muy extendida en guías y bases colaborativas. Para una guía de divulgación rigurosa conviene presentarla como una atribución discutida, no como un hecho documental inequívoco.',
-        p3: 'El barrio de San Pedro también guarda relatos populares: se cuenta que la vida del mercado se entrelaza con la devoción a San Pedro —patrón de los pescadores y, en el imaginario local, también de quienes recorren los pasillos del abasto— y con las procesiones y ferias que la ciudad ha sostenido durante siglos. Como en toda plaza antigua, las leyendas circulan de boca en boca; las presentamos como relato popular, no como historia documentada.',
-        imgInside: 'Mercado Central de San Pedro - Interior con puestos de frutas y visitantes en Cusco, Perú',
+        noteBody: 'El inventario MINCETUR y PROMPERÚ atribuyen el diseño a Gustave Eiffel. Presentamos esa atribución con sus fuentes; esta guía no ha realizado una investigación de archivo independiente.',
+        p3: 'La ficha MINCETUR recoge su declaración como Monumento integrante del Patrimonio Cultural de la Nación mediante la Resolución Viceministerial 0331-2024-VMPCIC/MC. Su valor también reside en las relaciones cotidianas entre comerciantes, productos y compradores.',
+        imgInside: 'Comensales y puestos de comida en el interior del Mercado San Pedro de Cusco',
         imgFruit: 'Puesto de frutas y jugos en el Mercado San Pedro de Cusco',
         culturalTitle: 'Lectura cultural',
         culturalBody: 'El valor del mercado está en observar relaciones, productos y ritmos cotidianos, no solo en comprar.'
@@ -156,19 +156,19 @@ export const guide: Record<Locale, GuideContent> = {
         eyebrow: 'Planifica bien',
         h2: 'Cuándo ir y cuánto tiempo quedarse.',
         cards: [
-          [ 'Mejor franja: mañana', 'Para observar el abastecimiento, mayor variedad de productos frescos y un ritmo más local. Evita ir con prisa: los pasillos pueden estar concurridos.' ],
-          [ 'Tiempo recomendado: 60–90 min', 'Suficiente para recorrer los sectores principales. Añade tiempo si vas a comer, tomar un jugo o conversar con vendedores.' ],
+          [ 'Planifica con margen', 'Elige una franja dentro del horario de referencia y confirma con el puesto si buscas un producto o comida en particular. La afluencia y la oferta varían.' ],
+          [ 'Tiempo recomendado: 60–90 min', 'Como propuesta de planificación, reserva 60–90 minutos y añade margen para comer o conversar. No es un tiempo de recorrido garantizado.' ],
           [ 'Altura y clima', 'Cusco supera los 3,000 m s. n. m. Avanza despacio si acabas de llegar. El mercado es cubierto, pero las calles exteriores pueden ser frías y lluviosas según la temporada.' ],
           [ 'Dinero y respeto', 'Lleva soles y billetes pequeños. Pide permiso antes de fotografiar personas. Mantén tus pertenencias cerca en zonas de mucha circulación.' ]
         ]
       },
       clima: {
-        eyebrow: 'Clima en tiempo real',
-        h2: 'El clima hoy en Cusco y el pronóstico de varios días.',
-        lead: 'Cusco está a más de 3,000 m s. n. m.: las mañanas pueden ser frías y soleadas, y las tardes, variables según la época. Revisa la condición actual y el pronóstico antes de salir.',
-        loading: 'Cargando el clima actual…',
-        error: 'No pudimos obtener el clima en este momento. Puedes consultar el pronóstico en tu aplicación habitual antes de salir.',
-        now: 'Ahora',
+        eyebrow: 'Pronóstico del tiempo',
+        h2: 'Tiempo modelado en Cusco y próximos días.',
+        lead: 'Consulta los datos modelados de Open-Meteo para la ubicación del mercado. No son una observación de una estación dentro del recinto ni un aviso oficial; revisa la hora del dato y el pronóstico antes de salir.',
+        loading: 'Cargando el pronóstico…',
+        error: 'No pudimos obtener el pronóstico. Consulta SENAMHI o tu fuente habitual antes de salir.',
+        now: 'Dato modelado actual',
         next: 'Próximos días',
         advice: 'Recomendaciones según el clima',
         note: 'Sugerencias generadas a partir del pronóstico; no sustituyen la información oficial de protección civil ni de las autoridades locales.',
@@ -179,9 +179,9 @@ export const guide: Record<Locale, GuideContent> = {
         h2: 'Cómo llegar al Mercado San Pedro.',
         cards: [
           [ 'Desde el aeropuerto', 'Desde el Aeropuerto Internacional Alejandro Velasco Astete, taxi o vehículo por aplicación suele ser la opción más directa. El transporte público urbano también conecta el eje del aeropuerto con el centro; confirma la ruta y el paradero vigentes antes de subir.' ],
-          [ 'En autobús urbano', 'Diversas rutas RTU/RTI pasan por Calle Nueva, Concevidayoc, Santa Clara y Av. del Ejército, a pocos minutos a pie. La red puede cambiar; verifica señalización y destino con el conductor o una fuente local actualizada.' ],
+          [ 'En autobús urbano', 'Confirma la ruta, el paradero y el sentido de circulación con el operador antes de subir. Esta guía no mantiene un listado verificado de líneas de autobús.' ],
           [ 'En taxi', 'Indica “Mercado de San Pedro” o “Plazoleta San Pedro”. En horas de congestión, puede ser más eficiente bajar a unas cuadras y completar el tramo caminando. Acuerda tarifa cuando corresponda y usa servicios autorizados.' ],
-          [ 'A pie y en tren', 'Desde la Plaza de Armas el recorrido peatonal es corto, por Mantas, Marqués y Santa Clara. La estación ferroviaria de San Pedro está frente/al lado del entorno del mercado y sirve de referencia urbana.' ]
+          [ 'A pie y en tren', 'El inventario MINCETUR estima unos 700 m desde la Plaza de Armas (aproximadamente 9 minutos como referencia, sin garantizar accesibilidad ni tiempo). La estación de San Pedro queda frente al mercado; verifica billetes y servicios con el operador ferroviario.' ]
         ],
         note: 'Los tiempos y rutas dependen del tránsito, obras y ajustes operativos. Para conexiones ferroviarias o aeroportuarias, verifica siempre la información del operador antes de viajar.'
       },
@@ -189,12 +189,12 @@ export const guide: Record<Locale, GuideContent> = {
         eyebrow: 'Servicios útiles, sin recomendaciones comerciales',
         h2: 'Lo que conviene saber alrededor del mercado.',
         cards: [
-          [ 'WC y lavamanos', 'Busca servicios higiénicos señalizados dentro o en equipamientos públicos del entorno. Llevar monedas y alcohol gel puede ser práctico.' ],
+          [ 'WC y lavamanos', 'Pregunta a la administración por la ubicación, disponibilidad, accesibilidad y posibles cobros de los baños. La ficha MINCETUR de 2025 señalaba la necesidad de mejorar los servicios higiénicos; no garantizamos sus condiciones actuales.' ],
           [ 'Estacionamiento', 'El centro histórico tiene calles estrechas, regulación de tránsito y oferta limitada de estacionamiento. Si llegas en auto, prioriza estacionamientos formales en el perímetro y continúa a pie.' ],
           [ 'Alimentación', 'Dentro del mercado hay sectores de comida, panes, jugos y productos frescos. Para seguridad alimentaria, elige puestos con alta rotación, superficies limpias y alimentos bien cocidos.' ],
           [ 'Alojamiento', 'El centro de Cusco dispone de múltiples categorías de alojamiento. Compara ubicación, accesibilidad, políticas y registros en fuentes oficiales o plataformas independientes; esta guía no recomienda establecimientos concretos.' ],
           [ 'Compras y abarrotes', 'El propio mercado funciona como gran centro de abasto. En calles vecinas encontrarás tiendas y comercios de conveniencia; evita comprar productos regulados o de origen dudoso.' ],
-          [ 'Combustible y carga', 'Las estaciones de combustible se ubican principalmente fuera del núcleo más peatonal del centro. Los puntos de carga para vehículos eléctricos son aún menos frecuentes; planifica la recarga con antelación.' ]
+          [ 'Combustible y carga', 'No se ha verificado un punto de combustible o recarga junto al mercado. Si lo necesitas, consulta ubicación, disponibilidad y horario directamente antes del viaje.' ]
         ]
       },
       comer: {
@@ -212,7 +212,7 @@ export const guide: Record<Locale, GuideContent> = {
       },
       entrada: {
         cards: [
-          { eyebrow: 'Entrada y gastos', title: 'Sin boleto de acceso', body: 'El mercado es un espacio de abasto con ingreso libre. Presupuesta solo tus consumos y compras. Evitamos publicar precios concretos porque cambian con producto, temporada y puesto.' },
+          { eyebrow: 'Entrada y gastos', title: 'Sin boleto de acceso', body: 'El inventario MINCETUR indica ingreso libre al mercado. Los consumos y las compras se pagan en cada puesto; confirma precios y condiciones antes de pedir. No se garantizan servicios ni disponibilidad.' },
           { eyebrow: 'Compra responsable', title: 'Pregunta, compara, respeta.', body: 'Consulta el precio antes de pedir, no manipules alimentos sin permiso y evita presionar para fotografiar. Si compras artesanía, pregunta por materiales y procedencia.' },
           { eyebrow: 'Seguridad práctica', title: 'Atención a tus pertenencias.', body: 'Como en cualquier mercado concurrido, usa bolso cerrado, evita exhibir objetos de valor y mantén especial atención al cruzar calles alrededor del recinto.' }
         ]
@@ -222,40 +222,40 @@ export const guide: Record<Locale, GuideContent> = {
         h2: 'Mercado Central de San Pedro',
         addr: 'Ca. Thupaq Amaru 477, Cusco 08002, Perú',
         mapsCta: 'Abrir en Google Maps',
-        govtText: 'Para novedades oficiales e información regional de turismo, visita el',
-        govtName: 'Perú / Cusco Portal Oficial de Turismo'
+        govtText: 'Consulta la ficha del mercado en',
+        govtName: 'Inventario Turístico de MINCETUR'
       },
       faq: {
         eyebrow: 'Preguntas frecuentes',
         h2: 'Antes de ir',
         items: [
-          [ '¿Dónde está ubicado el Mercado Central de San Pedro?', 'El Mercado Central de San Pedro se encuentra en Ca. Thupaq Amaru 477, Cusco, Cusco, Perú (F2H8+JW Cusco), a pocas cuadras a pie de la Plaza de Armas.' ],
+          [ '¿Dónde está ubicado el Mercado Central de San Pedro?', 'Está en Ca. Thupaq Amaru 477, Cusco 08002, Perú, según la ficha de Google Maps consultada el 22 de octubre de 2026 (UTC). El inventario MINCETUR lo ubica frente a la estación de San Pedro.' ],
           [ '¿Qué es el Mercado de San Pedro?', 'Mercado San Pedro es la denominación habitual del Mercado Central de San Pedro, el mercado de abastos cubierto más antiguo del Cusco, en el barrio tradicional de San Pedro.' ],
-          [ '¿La entrada al Mercado San Pedro tiene costo?', 'No. El ingreso al mercado es libre. Los alimentos, artesanías y demás productos se pagan directamente en cada puesto.' ],
-          [ '¿Cuál es el mejor momento para visitarlo?', 'La mañana suele ofrecer una lectura más completa de la actividad cotidiana y de los productos frescos. Si deseas comer allí, el tramo entre media mañana y primeras horas de la tarde suele ser práctico.' ],
+          [ '¿La entrada al Mercado San Pedro tiene costo?', 'El inventario MINCETUR indica ingreso libre al recinto. Alimentos, artesanías y otros productos se pagan por separado en cada puesto; confirma las condiciones actuales.' ],
+          [ '¿Cuál es el mejor momento para visitarlo?', 'Elige una hora dentro de las referencias publicadas y vuelve a confirmar si buscas un puesto o producto concreto. No hay una franja con afluencia u oferta garantizadas.' ],
           [ '¿Cuánto tiempo conviene quedarse?', 'Reserva entre 60 y 90 minutos para recorrer con calma los pasillos; suma más tiempo si piensas sentarte a comer o conversar con comerciantes.' ],
-          [ '¿Se puede fotografiar dentro?', 'Sí, pero por respeto conviene pedir permiso antes de fotografiar a personas o primeros planos de los puestos.' ],
+          [ '¿Se puede fotografiar dentro?', 'Pide permiso antes de fotografiar a personas o puestos y respeta cualquier negativa o indicación de la administración.' ],
           [ '¿Es recomendable llevar efectivo?', 'Sí. En un mercado tradicional muchos pagos siguen realizándose en soles y no todos los puestos aceptan tarjeta. Llevar billetes de baja denominación facilita compras pequeñas.' ],
-          [ '¿Hay baños y servicios básicos?', 'El entorno del mercado cuenta con servicios urbanos y sanitarios, pero su disponibilidad, accesibilidad y condiciones pueden variar. Conviene confirmar in situ y llevar cambio.' ],
+          [ '¿Hay baños y servicios básicos?', 'Confirma con la administración la ubicación, disponibilidad, accesibilidad y cobros de los baños. El inventario MINCETUR de 2025 señalaba mejoras pendientes; esta guía no certifica su estado actual.' ],
           [ '¿Está cerca del centro histórico?', 'Sí. Se encuentra en el barrio tradicional de San Pedro, dentro del Centro Histórico del Cusco y a una caminata corta del núcleo monumental.' ],
           [ '¿Cómo afecta la altura?', 'El mercado está en Cusco, a más de 3,000 m s. n. m. Camina a ritmo tranquilo, hidrátate y evita sobreesfuerzos si aún no te has aclimatado.' ]
         ]
       },
       fuentes: {
         h2: 'Fuentes y criterio editorial',
-        lead: 'La ficha se elaboró contrastando el Inventario Nacional de Recursos Turísticos de MINCETUR, la catalogación del Centro Histórico de la Municipalidad Provincial del Cusco y fuentes públicas de movilidad. Los horarios, rutas y servicios pueden cambiar; los datos críticos deben verificarse antes de viajar.',
+        lead: 'Revisión de fuentes: 22 de octubre de 2026 (UTC). La ficha MINCETUR y PROMPERÚ respaldan la identidad y el contexto del mercado. Los horarios de sus páginas y de Google Maps no coinciden; se detallan abajo.',
         photos: 'Fotografías: fachada — Ordzonhyd Rudyard Tarco Palomino / Wikimedia Commons (CC BY 4.0); jugos — sergejf / Wikimedia Commons (CC BY 2.0); interior — Ashim D’Silva / Unsplash, archivo en Wikimedia Commons (CC0).'
       }
     },
     seasonal: {
       eyebrow: 'Cuándo conviene ir',
       h2: 'Estrategia de visita por temporada.',
-      lead: 'En los Andes cusqueños se distinguen dos grandes épocas. Las cifras son promedios climáticos de largo plazo (normales de 30 años) y sirven de orientación; el pronóstico real debe revisarse antes de cada viaje.',
+      lead: 'Orientación regional de PROMPERÚ, publicada el 19 de noviembre de 2021: época más seca de abril a septiembre y lluviosa de octubre a marzo. No son normales climáticas de 30 años ni un pronóstico actual del mercado.',
       cols: [ 'Época', 'Meses', 'Clima típico', 'Día / noche', 'Para visitar el mercado', 'Recomendaciones' ],
       rows: [
-        { epoca: 'Temporada seca', epocaSub: 'invierno austral', meses: 'mayo – septiembre', clima: 'Días mayormente despejados y soleados; cielos limpios, mejor visibilidad para fotografiar. Lluvia escasa.', diaNoche: '18–21 °C / 0–5 °C', mercado: 'La mejor ventana: calles secas, menos interrupciones por lluvia y cómodo recorrido a pie entre el mercado y el centro.', recom: 'Abrígado para la mañana y la noche. Sol fuerte a la altura: protector solar y gorra.' },
-        { epoca: 'Temporada de lluvias', epocaSub: 'verano austral', meses: 'octubre – abril (dic–feb, más húmedo)', clima: 'Mañanas a menudo despejadas; lluvias por la tarde, nubosidad y suelos húmedos. Enero y febrero suelen ser los meses con más precipitación.', diaNoche: '19–22 °C / 7–10 °C', mercado: 'Visita temprano: recorre el mercado por la mañana y deja la tarde libre por si llueve. El mercado cubierto protege de la lluvia.', recom: 'Calzado antideslizante, paraguas o impermeable y bolsa resistente para compras.' },
-        { epoca: 'Meses de transición', epocaSub: '', meses: 'abril, octubre', clima: 'Tiempo variable, menos extremo que los picos de cada temporada. Buenos días para quienes prefieren menos gente.', diaNoche: '18–21 °C / 4–8 °C', mercado: 'Equilibrio entre sol y lluvia; conviene llevar ambas opciones de ropa.', recom: 'Ropa por capas: mañana fría, mediodía templado.' }
+        { epoca: 'Temporada seca', epocaSub: 'invierno austral', meses: 'abril – septiembre', clima: 'Días mayormente despejados y soleados; cielos limpios, mejor visibilidad para fotografiar. Lluvia escasa.', diaNoche: 'Consulta el pronóstico', mercado: 'La lluvia sigue siendo posible. Decide los tramos exteriores según el pronóstico del día.', recom: 'Abrígado para la mañana y la noche. Sol fuerte a la altura: protector solar y gorra.' },
+        { epoca: 'Temporada de lluvias', epocaSub: 'verano austral', meses: 'octubre – marzo', clima: 'Mayor probabilidad estacional de lluvia; no implica que llueva a una hora fija cada día.', diaNoche: 'Sin rango verificado aquí', mercado: 'El recinto es cubierto, pero los trayectos exteriores siguen expuestos. Comprueba el pronóstico antes de salir.', recom: 'Calzado antideslizante, paraguas o impermeable y bolsa resistente para compras.' },
+        { epoca: 'Meses de transición', epocaSub: '', meses: 'abril, octubre', clima: 'Los límites entre épocas son orientativos. No permiten predecir la afluencia ni el tiempo de una visita concreta.', diaNoche: 'Tiempo variable', mercado: 'Equilibrio entre sol y lluvia; conviene llevar ambas opciones de ropa.', recom: 'Ropa por capas: mañana fría, mediodía templado.' }
       ],
       noteTitle: 'Lectura de altitud y clima',
       noteBody: 'Cusco se encuentra a cerca de 3,400 m s. n. m. La radiación solar es intensa durante el día y las noches pueden ser frías todo el año. La diferencia entre el clima del mercado cubierto y las calles exteriores es notable: planea tus caminatas con margen para el sol, la lluvia y el frío.'
@@ -265,16 +265,16 @@ export const guide: Record<Locale, GuideContent> = {
       h2: 'Itinerarios según el tipo de visitante.',
       lead: 'El Mercado San Pedro se recorre a pie y combina bien con los espacios históricos del barrio de San Pedro y el núcleo monumental de Cusco. Estas propuestas son orientativas y se adaptan al ritmo de cada persona.',
       cards: [
-        { eyebrow: 'Familias con niños', title: 'Recorrido corto y con descansos', items: [ 'Entra por la mañana, cuando hay más variedad y menos aglomeración.', 'Prioriza los sectores de frutas, jugos y panes: actividades visuales y de prueba.', 'Planifica una parada para comer dentro del mercado (platos cocidos, caldos).', 'Lleva efectivo en pequeño y una muda si llueve.' ], time: 'Tiempo sugerido: 60–90 min' },
-        { eyebrow: 'Fotografía y naturaleza', title: 'Luz temprana y detalle', items: [ 'La mejor luz suele ser entre 08:00 y 10:30; lleva permiso antes de fotografiar personas.', 'Busca texturas: granos andinos, hierbas, frutas y el juego de luces en la cubierta.', 'Sube hacia la Plazoleta e Iglesia de San Pedro para encuadrar el mercado y el entorno.', 'Combina con la Plaza de Armas para planos urbanos más amplios.' ], time: 'Tiempo sugerido: 90–120 min' },
-        { eyebrow: 'Movilidad reducida / bajo esfuerzo', title: 'Pausado y sin prisa', items: [ 'El mercado es cubierto y de acceso a nivel desde la calle; evita las horas pico.', 'Identifica bancas o zonas de descanso y un punto de encuentro fijo.', 'Usa pasillos principales y evita cargar bultos pesados.', 'Hidrátate y avanza despacio por la altura.' ], time: 'Tiempo sugerido: 45–75 min' }
+        { eyebrow: 'Familias con niños', title: 'Recorrido corto y con descansos', items: [ 'Comprueba el horario del mercado y los puestos que te interesan; la afluencia varía.', 'Prioriza los sectores de frutas, jugos y panes: actividades visuales y de prueba.', 'Planifica una parada para comer dentro del mercado (platos cocidos, caldos).', 'Lleva efectivo en pequeño y una muda si llueve.' ], time: 'Tiempo sugerido: 60–90 min' },
+        { eyebrow: 'Fotografía y naturaleza', title: 'Luz temprana y detalle', items: [ 'Observa la luz disponible y pide permiso antes de fotografiar personas o puestos.', 'Busca texturas: granos andinos, hierbas, frutas y el juego de luces en la cubierta.', 'Busca un encuadre desde zonas públicas permitidas, sin obstruir el paso.', 'Combina con la Plaza de Armas para planos urbanos más amplios.' ], time: 'Tiempo sugerido: 90–120 min' },
+        { eyebrow: 'Movilidad reducida / bajo esfuerzo', title: 'Pausado y sin prisa', items: [ 'Confirma con la administración la entrada adecuada, escalones y anchura de pasillos antes de ir. No se ha verificado una ruta sin barreras.', 'Confirma lugares de descanso y baños accesibles; acuerda un punto de encuentro.', 'Usa pasillos principales y evita cargar bultos pesados.', 'Hidrátate y avanza despacio por la altura.' ], time: 'Tiempo sugerido: 45–75 min' }
       ],
       rutasTitle: 'Rutas sugeridas',
       rutas: [
-        { eyebrow: 'Medio día', title: 'Mercado + núcleo de San Pedro', items: [ 'Recorrido de productos andinos y jugos en el Mercado San Pedro (60–90 min).', 'Para comer o tomar un jugo dentro del mercado.', 'Salida hacia la Plazoleta e Iglesia de San Pedro y su frente urbano.', 'Caminata corta por Santa Clara hasta el Arco San Francisco.' ], time: 'Total: unas 3–4 h, a pie' },
-        { eyebrow: 'Día completo', title: 'Mercado + centro monumental', items: [ 'Mañana en el Mercado San Pedro y la Plazoleta e Iglesia de San Pedro (90–120 min).', 'Corredor Santa Clara – Arco San Francisco hacia el centro.', 'Almuerzo en el entorno del centro histórico (cocina cusqueña, menús del día).', 'Tarde en la Plaza de Armas, catedral y calles aledañas.', 'Regreso tranquilo al barrio de San Pedro al atardecer.' ], time: 'Total: unas 6–7 h, a pie y con pausas' }
+        { eyebrow: 'Medio día', title: 'Mercado + núcleo de San Pedro', items: [ 'Recorrido de productos andinos y jugos en el Mercado San Pedro (60–90 min).', 'Para comer o tomar un jugo dentro del mercado.', 'Salida hacia la Plazoleta e Iglesia de San Pedro y su frente urbano.', 'Si continúas por Santa Clara, comprueba antes el recorrido y las condiciones de las calles.' ], time: 'Total: unas 3–4 h, a pie' },
+        { eyebrow: 'Día completo', title: 'Mercado + centro monumental', items: [ 'Mañana en el Mercado San Pedro y la Plazoleta e Iglesia de San Pedro (90–120 min).', 'Considera Santa Clara como continuación opcional, tras comprobar el recorrido.', 'Almuerzo en el entorno del centro histórico (cocina cusqueña, menús del día).', 'Tarde en la Plaza de Armas, catedral y calles aledañas.', 'Planifica el regreso según transporte, condiciones y horario confirmado.' ], time: 'Total: unas 6–7 h, a pie y con pausas' }
       ],
-      note: 'Las distancias y tiempos dependen del tránsito, la afluencia y el clima. Ajusta el recorrido al ritmo del grupo y reserva margen para descansar por la altura.'
+      note: 'Propuestas de planificación, no recorridos guiados ni garantías de acceso. Los lugares del entorno son visitas separadas: verifica sus horarios, entradas, rutas y accesibilidad. Adapta tiempos y descansos al grupo.'
     },
     responsibility: {
       eyebrow: 'Ciencia y visita responsable',
@@ -283,7 +283,7 @@ export const guide: Record<Locale, GuideContent> = {
       cards: [
         { title: 'Altura y clima andino', body: 'Cusco está a cerca de 3,400 m s. n. m. La presión del aire es menor y el esfuerzo físico se siente más. La radiación ultravioleta es alta durante el día, incluso con frío. Camina despacio los primeros días, bebe agua y usa protección solar.' },
         { title: 'Ecología de la despensa', body: 'El mercado concentra productos de distintos pisos ecológicos: papas nativas, maíz, quinua y tubérculos de zonas altas, y frutas llegadas desde valles más cálidos. Observar esa diversidad es una forma directa de entender la agricultura andina.' },
-        { title: 'Aclimatación y energía', body: 'El cuerpo tarda días en ajustarse a la altura. Evita sobreesfuerzos, alcohol y comidas muy pesadas al llegar. Una caminata corta y pausada por el mercado es una buena primera actividad de ajuste.' },
+        { title: 'Planificación personal', body: 'Esta guía no evalúa la aptitud para visitar lugares de altura. Adapta el recorrido a tus necesidades y consulta a un profesional sanitario si tienes dudas de salud.' },
         { title: 'Comprar con respeto', body: 'Pregunta el precio antes de pedir, no manipules alimentos sin permiso y evita regatear de forma agresiva. Si compras artesanía, pregunta por materiales y procedencia: ayuda a valorar el trabajo de quienes venden.' },
         { title: 'Menos residuos', body: 'Lleva una bolsa reutilizable y, si es posible, una botella. El mercado genera mucha basura orgánica y plástica; tu ejemplo reduce el impacto en un espacio tan concurrido.' },
         { title: 'Seguridad práctica', body: 'Como en cualquier mercado con afluencia, usa bolso cerrado, no exhibas objetos de valor y mantén atención al cruzar calles. La altura y el sol también son factores de riesgo: hidrátate y usa gorra.' }
@@ -294,24 +294,24 @@ export const guide: Record<Locale, GuideContent> = {
       horario: {
         eyebrow: 'Horario y cómo llegar',
         h1: 'Horario, ubicación y cómo llegar al Mercado San Pedro',
-        intro: 'El Mercado Central de San Pedro abre temprano y cierra al caer la tarde. Es un mercado de abasto cubierto, a un par de cuadras de la Plaza de Armas, en el barrio tradicional de San Pedro.',
+        intro: 'Mercado de abastos cubierto del barrio de San Pedro, frente a la estación ferroviaria. Los horarios de referencia publicados difieren; no equivalen al horario de cada puesto.',
         facts: [
-          { label: 'Horario de referencia', value: '06:00 – 18:00', sub: 'Inventario turístico de referencia; puestos y sectores pueden variar.' },
-          { label: 'Entrada', value: 'Libre', sub: 'Sin boleto de acceso.' },
+          { label: 'Horario de referencia', value: 'L–S 06:30–18:00', sub: 'Dom. 06:30–16:00 · Maps, 22 oct. 2026 UTC; vuelve a confirmar.' },
+          { label: 'Entrada', value: 'Libre', sub: 'Según MINCETUR; compras y consumos aparte.' },
           { label: 'Altitud', value: '≈ 3,400 m' },
           { label: 'Dirección', value: 'Ca. Thupaq Amaru 477, Cusco 08002' }
         ],
         sections: [
-          { id: 'mejor-momento', eyebrow: 'Cuándo ir', h2: 'El mejor momento del día', lead: 'La mañana es la franja más completa para observar el abastecimiento y la mayor variedad de productos frescos.', body: [ 'Entre media mañana y primeras horas de la tarde suele ser práctico si piensas sentarte a comer dentro del mercado.', 'Evita ir con prisa: los pasillos pueden estar concurridos, sobre todo en temporada alta.' ] },
-          { id: 'como-llegar', eyebrow: 'Cómo llegar', h2: 'Opciones para llegar', cards: [ [ 'Desde el aeropuerto', 'Desde el Aeropuerto Internacional Alejandro Velasco Astete, taxi o aplicación suele ser lo más directo. El transporte público urbano también conecta con el centro.' ], [ 'En autobús urbano', 'Varias rutas pasan cerca, por Calle Nueva, Santa Clara y Av. del Ejército. Verifica la ruta vigente con el conductor.' ], [ 'A pie', 'Desde la Plaza de Armas es un paseo corto por Mantas, Marqués y Santa Clara.' ], [ 'En tren', 'La estación ferroviaria de San Pedro queda frente al entorno del mercado y sirve de referencia.' ] ] },
+          { id: 'mejor-momento', eyebrow: 'Cuándo ir', h2: 'Elegir una hora', lead: 'Consulta las referencias de horario y confirma con el puesto si quieres una comida o producto concreto.', body: [ 'Entre media mañana y primeras horas de la tarde suele ser práctico si piensas sentarte a comer dentro del mercado.', 'Evita ir con prisa: los pasillos pueden estar concurridos, sobre todo en temporada alta.' ] },
+          { id: 'como-llegar', eyebrow: 'Cómo llegar', h2: 'Opciones para llegar', cards: [ [ 'Desde el aeropuerto', 'Desde el Aeropuerto Internacional Alejandro Velasco Astete, taxi o aplicación suele ser lo más directo. El transporte público urbano también conecta con el centro.' ], [ 'En autobús urbano', 'Confirma con el operador la línea, el paradero y el sentido vigentes. No se han verificado líneas concretas en esta guía.' ], [ 'A pie', 'MINCETUR estima aproximadamente 700 m desde la Plaza de Armas y 9 minutos a pie como referencia, sin garantizar tiempo ni accesibilidad.' ], [ 'En tren', 'La estación ferroviaria de San Pedro queda frente al entorno del mercado y sirve de referencia.' ] ] },
           { id: 'altura', eyebrow: 'Altura y clima', h2: 'Visita con calma a la altura', body: [ 'Cusco supera los 3,000 m s. n. m. Camina despacio si acabas de llegar.', 'El mercado es cubierto, pero las calles exteriores pueden estar frías y lluviosas según la temporada.' ] }
         ],
         faqTitle: 'Antes de ir',
         faqEyebrow: 'Preguntas frecuentes',
         faq: [
-          [ '¿A qué hora abre el Mercado San Pedro?', 'Como referencia de inventario turístico, el horario es 06:00–18:00. Los puestos y sectores pueden abrir o cerrar en otros horarios.' ],
+          [ '¿A qué hora abre el Mercado San Pedro?', 'Google Maps, consultado el 22 de octubre de 2026 (UTC), indica lunes a sábado 06:30–18:00 y domingo 06:30–16:00. MINCETUR y PROMPERÚ publican otras referencias. Confirma antes de ir; cada puesto puede variar.' ],
           [ '¿La entrada tiene costo?', 'No. El ingreso es libre; se paga lo que se consume o compra en cada puesto.' ],
-          [ '¿Está lejos de la Plaza de Armas?', 'No. Está a un par de cuadras, en el barrio de San Pedro, dentro del Centro Histórico del Cusco.' ],
+          [ '¿Está lejos de la Plaza de Armas?', 'El inventario MINCETUR estima unos 700 m a pie desde la Plaza de Armas. El tiempo y la accesibilidad dependen del trayecto y de cada persona.' ],
           [ '¿Cómo llego desde el aeropuerto?', 'En taxi o aplicación suele ser lo más directo; el transporte público urbano también conecta el eje del aeropuerto con el centro.' ]
         ]
       },
@@ -327,7 +327,7 @@ export const guide: Record<Locale, GuideContent> = {
         ],
         sections: [
           { id: 'comer', eyebrow: 'Comer dentro', h2: 'Qué puedes buscar para comer', cards: [ [ 'Jugos y batidos', 'Filas de puestos preparan jugos al momento con frutas locales y productos llegados de zonas más cálidas.' ], [ 'Caldo y sopas', 'Caldos y sopas calientes son parte de la cocina de mercado, orientada a trabajadores y visitantes.' ], [ 'Pan y repostería', 'Pan chuta y panadería tradicional cusqueña suelen estar presentes en los sectores de pan.' ], [ 'Platos de mercado', 'Platos populares y menús del día muestran la cocina cotidiana de la región.' ] ] },
-          { id: 'comprar', eyebrow: 'Comprar', h2: 'Qué llevar de recuerdo', cards: [ [ 'Textiles de alpaca', 'Tejidos y prendas de fibra de alpaca; pregunta por materiales y procedencia.' ], [ 'Granos andinos', 'Papas nativas, maíz, quinua y chuño conectan con la agricultura de la región.' ], [ 'Hierbas y coca', 'Plantas medicinales y hoja de coca forman parte de prácticas andinas; úsalas con criterio.' ], [ 'Artesanía y objetos', 'Objetos de uso simbólico y artesanía local ayudan a entender la continuidad cultural.' ] ] },
+          { id: 'comprar', eyebrow: 'Comprar', h2: 'Qué llevar de recuerdo', cards: [ [ 'Textiles de alpaca', 'Tejidos y prendas de fibra de alpaca; pregunta por materiales y procedencia.' ], [ 'Granos andinos', 'Papas nativas, maíz, quinua y chuño conectan con la agricultura de la región.' ], [ 'Hierbas y coca', 'Las hierbas y hojas se venden como productos del mercado, no como recomendación médica de esta guía. Comprueba las restricciones aplicables antes de transportar productos.' ], [ 'Artesanía y objetos', 'Objetos de uso simbólico y artesanía local ayudan a entender la continuidad cultural.' ] ] },
           { id: 'consejos', eyebrow: 'Consejos', h2: 'Comprar con respeto', body: [ 'Consulta el precio antes de pedir y compara entre puestos.', 'No manipules alimentos sin permiso y evita presionar para fotografiar.', 'Lleva una bolsa reutilizable para reducir residuos.' ] }
         ],
         faqTitle: 'Dudas frecuentes',
@@ -357,7 +357,7 @@ export const guide: Record<Locale, GuideContent> = {
         faqTitle: 'Seguridad',
         faqEyebrow: 'Preguntas frecuentes',
         faq: [
-          [ '¿Es seguro el Mercado San Pedro?', 'Es un mercado vivo y concurrido. Con precaución básica con tus pertenencias y atención al tránsito, la visita es tranquila.' ],
+          [ '¿Es seguro el Mercado San Pedro?', 'Es un mercado concurrido; esta guía no garantiza la seguridad de una visita. Cuida tus pertenencias, presta atención al tránsito y sigue indicaciones locales.' ],
           [ '¿Hay que tener cuidado con la altura?', 'Sí. Cusco supera los 3,000 m s. n. m.; camina despacio, hidrátate y evita sobreesfuerzos al llegar.' ],
           [ '¿Se aceptan tarjetas?', 'Muchos puestos solo efectivo; lleva soles y billetes pequeños.' ],
           [ '¿Qué hago si llueve?', 'El mercado es cubierto y protege de la lluvia; usa calzado antideslizante en las calles exteriores.' ]
@@ -368,13 +368,13 @@ export const guide: Record<Locale, GuideContent> = {
       privacidad: {
         eyebrow: 'Información legal',
         h1: 'Política de privacidad',
-        updated: 'Última actualización: agosto de 2026',
+        updated: 'Última actualización: 22 de octubre de 2026',
         intro: 'Esta guía cultural es un proyecto informativo independiente y sin fines de lucro. Aplicamos el principio de minimización de datos: solo tratamos la información necesaria para operar, proteger y mejorar el sitio.',
         blocks: [
-          { h2: 'Información que podemos recopilar', items: [ { type: 'ul', items: [ 'Datos técnicos de navegación, como dirección IP, tipo de navegador, sistema operativo, páginas visitadas, fecha aproximada de acceso y datos de diagnóstico.', 'Cookies o tecnologías similares estrictamente necesarias para recordar preferencias de privacidad y, únicamente si usted lo autoriza, datos analíticos.', 'Información que usted proporcione voluntariamente al contactar por correo electrónico u otro canal publicado.' ] } ] },
-          { h2: 'Cómo utilizamos la información', items: [ { type: 'ul', items: [ 'Mejorar el contenido, la accesibilidad y la experiencia de uso.', 'Analizar tendencias generales de tráfico cuando exista consentimiento para analítica.', 'Responder solicitudes y comunicaciones.', 'Prevenir abuso, resolver incidencias técnicas y cumplir obligaciones legales.' ] } ] },
+          { h2: 'Información que podemos recopilar', items: [ { type: 'ul', items: [ 'Datos técnicos de navegación, como dirección IP, tipo de navegador, sistema operativo, páginas visitadas, fecha aproximada de acceso y datos de diagnóstico.', 'Cookies o tecnologías similares estrictamente necesarias para recordar preferencias de privacidad y, únicamente si usted lo autoriza, datos analíticos.', 'Esta guía no dispone de cuentas, reservas ni formulario o correo de contacto propio.' ] } ] },
+          { h2: 'Cómo utilizamos la información', items: [ { type: 'ul', items: [ 'Mejorar el contenido, la accesibilidad y la experiencia de uso.', 'Analizar tendencias generales de tráfico cuando exista consentimiento para analítica.', 'Mostrar información y el pronóstico solicitado en la página.', 'Prevenir abuso, resolver incidencias técnicas y cumplir obligaciones legales.' ] } ] },
           { h2: 'Base jurídica y consentimiento', items: [ { type: 'p', text: 'Las cookies necesarias se emplean para funciones esenciales. Las cookies analíticas no se activan por defecto: requieren una elección afirmativa en la página de configuración de cookies. Cuando el tratamiento se base en consentimiento, usted puede retirarlo en cualquier momento.' } ] },
-          { h2: 'Servicios de terceros', items: [ { type: 'p', text: 'El sitio puede integrar Google Maps para mostrar ubicación, Google Analytics para medición de tráfico solo cuando usted lo autoriza y recursos fotográficos procedentes de Wikimedia Commons o Unsplash. Cada proveedor aplica sus propias condiciones y políticas de privacidad. La carga de un mapa incrustado puede implicar una conexión directa con Google.' } ] },
+          { h2: 'Servicios de terceros', items: [ { type: 'p', text: 'El mapa incrustado conecta con Google al cargarse. Google Analytics se solicita solo cuando la opción de analítica es efectiva. El alojamiento de Cloudflare recibe las solicitudes del sitio y sus datos técnicos. El pronóstico se solicita al mismo sitio, que consulta Open-Meteo en el servidor; las fotos se sirven desde este sitio. El control de Google Analytics no controla el mapa ni los registros técnicos del alojamiento.' } ] },
           { h2: 'Conservación y seguridad', items: [ { type: 'p', text: 'No mantenemos perfiles publicitarios propios ni una base de datos de usuarios. Los datos técnicos conservados por proveedores de infraestructura o analítica se rigen por sus plazos y controles. Aplicamos medidas razonables para reducir recopilación innecesaria y exposición de datos.' } ] },
           { h2: 'Sus derechos', items: [ { type: 'p', text: 'Según la normativa aplicable —incluido el Reglamento General de Protección de Datos (GDPR) cuando corresponda— usted puede solicitar acceso, rectificación, supresión, limitación u oposición al tratamiento y, cuando proceda, portabilidad. También puede retirar su consentimiento y presentar una reclamación ante la autoridad de control competente.' } ] },
           { h2: 'Menores', items: [ { type: 'p', text: 'Este sitio no está diseñado para recopilar conscientemente datos personales de menores. Si detectamos información de este tipo obtenida de forma indebida, procuraremos eliminarla.' } ] },
@@ -384,7 +384,7 @@ export const guide: Record<Locale, GuideContent> = {
       terminos: {
         eyebrow: 'Información legal',
         h1: 'Términos de servicio',
-        updated: 'Última actualización: agosto de 2026',
+        updated: 'Última actualización: 22 de octubre de 2026',
         intro: 'Al acceder y utilizar esta guía, usted acepta estos términos. Si no está de acuerdo, puede dejar de utilizar el sitio.',
         blocks: [
           { h2: 'Naturaleza del proyecto', items: [ { type: 'p', text: 'Somos una guía turística y cultural independiente, sin fines de lucro y de carácter divulgativo. No representamos al Mercado Central de San Pedro, a la Municipalidad Provincial del Cusco, al Gobierno Regional del Cusco, a MINCETUR ni a operadores comerciales.' } ] },
@@ -401,25 +401,25 @@ export const guide: Record<Locale, GuideContent> = {
       cookies: {
         eyebrow: 'Privacidad y preferencias',
         h1: 'Configuración de cookies',
-        updated: 'Última actualización: agosto de 2026',
+        updated: 'Última actualización: 22 de octubre de 2026',
         intro: 'Usamos cookies y almacenamiento local para funciones esenciales y, si usted lo autoriza, para comprender de forma agregada cómo se utiliza el sitio. Puede cambiar su elección en cualquier momento desde esta página.',
         blocks: [
-          { h2: 'Gestión del consentimiento', items: [ { type: 'p', text: 'La preferencia se guarda en el almacenamiento local de su navegador con la clave msp-cookie-preferences. Borrar los datos del sitio eliminará esta elección. Desactivar cookies o almacenamiento local puede afectar algunas funciones, pero el contenido principal seguirá siendo accesible.' } ] }
+          { h2: 'Gestión del consentimiento', items: [ { type: 'p', text: 'Puedes permitir o rechazar Google Analytics aquí; el cambio se aplica a las solicitudes futuras de esta página, sin deshacer datos ya enviados. Si el navegador impide guardar o leer la elección, la analítica queda desactivada en esta página y se informa del alcance de la negativa. No se garantiza su propagación a otras pestañas o navegadores. Borrar los datos del sitio elimina las elecciones guardadas.' } ] }
         ],
         form: {
-          necessaryTitle: 'Cookies necesarias',
-          necessaryBody: 'Imprescindibles para recordar su configuración de privacidad y mantener funciones básicas. No pueden desactivarse desde este panel.',
+          necessaryTitle: 'Almacenamiento de la elección',
+          necessaryBody: 'La elección se guarda en este navegador. Una negativa también usa almacenamiento de sesión y una marca de pestaña si están disponibles. No se necesita aceptar analítica para leer la guía.',
           analyticsTitle: 'Cookies analíticas',
           analyticsBody: 'Permiten activar Google Analytics para obtener estadísticas de uso agregadas. Se mantienen desactivadas hasta que usted las acepte.',
           prefsTitle: 'Cookies de preferencias',
-          prefsBody: 'Permiten recordar ajustes no esenciales de interfaz en este dispositivo, como el idioma de la guía.',
+          prefsBody: 'El idioma se elige mediante los enlaces Español/English y la URL; no se guarda una preferencia de idioma.',
           marketingTitle: 'Cookies de marketing',
           marketingBody: 'Este proyecto no utiliza publicidad personalizada ni cookies de marketing. Esta categoría permanece inactiva.',
           save: 'Guardar preferencias',
           reject: 'Rechazar lo no esencial',
-          saved: 'Preferencias guardadas. Los cambios se aplicarán por completo al recargar la página.',
+          saved: 'Google Analytics: elección guardada.',
           rejected: 'Se han rechazado todas las cookies no esenciales.',
-          prefsNote: 'El sitio ofrece guía en español e inglés; su elección de idioma se recuerda en este dispositivo.',
+          prefsNote: 'El idioma se elige mediante enlaces, sin una cookie de idioma.',
           consentTitle: 'Gestión del consentimiento',
           consentBody: 'La preferencia se guarda en el almacenamiento local de su navegador con la clave msp-cookie-preferences.',
           key: 'msp-cookie-preferences'
@@ -431,7 +431,7 @@ export const guide: Record<Locale, GuideContent> = {
     nav: { home: 'Home', horario: 'Hours & getting there', comida: 'Food & shopping', seguridad: 'Safety', maps: 'Open map' },
     footer: {
       disclaimer1: 'This is an independent, non-profit visitor information project. It is not affiliated with the Provincial Municipality of Cusco, government agencies, or official organizations.',
-      disclaimer2: 'Attraction information is cross-checked against public sources from the Provincial Municipality of Cusco, the Cusco Regional Directorate of Foreign Trade, Tourism and Handicrafts, and Peru’s Ministry of Foreign Trade and Tourism (MINCETUR). It contains no commercial recommendations.',
+      disclaimer2: 'Sources checked 22 October 2026 (UTC): MINCETUR inventory, PROMPERÚ and the Google Maps listing. Published hours differ; consult the sources and check again before visiting.',
       copyright: '© 2026 Cultural Guide to the San Pedro Market of Cusco. All rights reserved.',
       sub: 'Unofficial guide to the Mercado Central de San Pedro, Cusco district and province, Peru.',
       legal: [ { label: 'Privacy', key: 'privacidad' }, { label: 'Terms', key: 'terminos' }, { label: 'Cookies', key: 'cookies' } ]
@@ -439,31 +439,31 @@ export const guide: Record<Locale, GuideContent> = {
     home: {
       heroKicker: 'Historic market · Historic Centre of Cusco',
       heroTitle: `Mercado Central de San Pedro <span class="text-[#f1b83b]">(Cusco)</span>`,
-      heroLead: 'San Pedro, the market where Cusco keeps talking. Fruit, bread, grains, herbs, everyday food and handicrafts under one great roof: a direct door into Andean daily life, just a few blocks from the city’s monumental heart.',
+      heroLead: 'A covered food market in the San Pedro neighbourhood, with fruit, bread, grains, juices, meals and handicrafts. This independent guide distinguishes the market from its individual stalls and brings together location, reference hours and planning tips.',
       heroCta1: 'Plan your visit',
       heroCta2: 'Discover its history',
       facts: {
         ingreso: { label: 'Entry', value: 'Free' },
-        referencia: { label: 'Reference hours', value: '06:00–18:00', sub: 'Reference tourism inventory hours; may vary.' },
+        referencia: { label: 'Reference hours', value: 'Mon–Sat 06:30–18:00', sub: 'Sun 06:30–16:00 · Google Maps, 22 Oct 2026 UTC. Recheck; individual stalls may vary.' },
         altitud: { label: 'Altitude', value: '≈ 3,400 m' },
         direccion: { label: 'Address', value: 'Ca. Thupaq Amaru 477, Cusco' }
       },
       acerca: {
         eyebrow: 'About the attraction',
         h2: 'Welcome to the Mercado Central de San Pedro',
-        p1: 'Welcome to the <strong>Mercado Central de San Pedro</strong>, widely known as <strong>Mercado San Pedro</strong>. Located in the heart of <strong>Cusco</strong>, <strong>Cusco</strong>, <strong>Peru</strong>, it is a main hub for visitors to the region and a direct door into Andean daily life.',
+        p1: 'The <strong>Mercado Central de San Pedro</strong>, commonly called <strong>Mercado San Pedro</strong>, is a food market in the traditional San Pedro neighbourhood of Cusco, Peru. This guide covers the whole market and does not represent or endorse an individual stall.',
         hierarchy: [ 'Mercado Central de San Pedro', 'Cusco', 'Cusco', 'Peru' ],
-        p2: 'While visiting the <strong>Mercado Central de San Pedro</strong>, you can easily walk to other nearby historic landmarks, including the <strong>Plazoleta e Iglesia de San Pedro</strong> and the <strong>Plaza de Armas of Cusco</strong>.'
+        p2: 'The MINCETUR inventory places the market opposite San Pedro station and estimates about 700 m on foot from the <strong>Plaza de Armas</strong>. Time depends on the route, traffic and individual access needs.'
       },
       historia: {
         eyebrow: 'History and context',
         h2: 'A modern market in a neighbourhood with centuries of memory.',
-        p1: 'San Pedro is one of the traditional neighbourhoods of the historic centre of Cusco. Municipal records note that the Hospital de Naturales stood in this area from the 16th century, and the neighbourhood built its own identity around its religious, commercial and connecting spaces.',
-        p2: 'In the early 20th century, authorities moved the supply activity held in the central plazas into a dedicated building. The market opened in 1925 under the municipal administration of Manuel Silvestre Frisancho, becoming the oldest covered food market in Cusco.',
+        p1: 'The MINCETUR tourism inventory places the market in the traditional San Pedro neighbourhood, opposite the railway station. It remains an everyday food market as well as a cultural visit.',
+        p2: 'According to that inventory, it opened on 7 June 1925 under mayor Manuel Silvestre Frisancho and is Cusco’s oldest enclosed food market.',
         noteTitle: 'On the architectural authorship',
-        noteBody: 'The popular attribution to Gustave Eiffel is widespread in guides and collaborative databases. For a rigorous guide, it is best presented as a disputed attribution, not an undisputed documented fact.',
-        p3: 'The San Pedro neighbourhood also holds popular stories: it is said the market’s life is intertwined with devotion to Saint Peter — patron of fishermen and, in local imagination, also of those who walk the market aisles — and with the processions and fairs the city has kept for centuries. As in any old square, legends travel by word of mouth; we present them as popular lore, not documented history.',
-        imgInside: 'Mercado Central de San Pedro - Interior with fruit stands and visitors in Cusco, Peru',
+        noteBody: 'The MINCETUR inventory and PROMPERÚ attribute the design to Gustave Eiffel. We present this as a sourced attribution; this guide has not carried out independent archival research.',
+        p3: 'The MINCETUR record cites its declaration as a monument forming part of Peru’s national cultural heritage under Vice-Ministerial Resolution 0331-2024-VMPCIC/MC. Its value also lies in everyday relationships between traders, products and shoppers.',
+        imgInside: 'Diners and food counters inside San Pedro Market in Cusco',
         imgFruit: 'Fruit and juice stand at the Mercado San Pedro in Cusco',
         culturalTitle: 'Cultural reading',
         culturalBody: 'The market’s value lies in observing relationships, products and daily rhythms — not only in buying.'
@@ -482,19 +482,19 @@ export const guide: Record<Locale, GuideContent> = {
         eyebrow: 'Plan ahead',
         h2: 'When to go and how long to stay.',
         cards: [
-          [ 'Best window: morning', 'To see the supply activity, the widest variety of fresh products and a more local rhythm. Avoid rushing: the aisles can be busy.' ],
-          [ 'Recommended time: 60–90 min', 'Enough to walk the main sections. Add time if you plan to eat, have a juice or chat with vendors.' ],
+          [ 'Leave time to explore', 'Choose a time within the reference hours and check with the stall if you want a particular product or meal. Crowds and availability vary.' ],
+          [ 'Recommended time: 60–90 min', 'As a planning suggestion, allow 60–90 minutes and extra time for a meal or conversation. This is not a guaranteed walking time.' ],
           [ 'Altitude and weather', 'Cusco is above 3,000 m. Walk slowly if you just arrived. The market is covered, but outside streets can be cold and rainy by season.' ],
           [ 'Money and respect', 'Bring soles and small bills. Ask before photographing people. Keep your belongings close in busy areas.' ]
         ]
       },
       clima: {
-        eyebrow: 'Live weather',
-        h2: 'Today’s weather in Cusco and the multi-day forecast.',
-        lead: 'Cusco is above 3,000 m: mornings can be cold and sunny, afternoons variable by season. Check the current condition and forecast before you head out.',
-        loading: 'Loading current weather…',
-        error: 'We could not get the weather right now. You can check the forecast in your usual app before leaving.',
-        now: 'Now',
+        eyebrow: 'Weather forecast',
+        h2: 'Modelled weather in Cusco and the days ahead.',
+        lead: 'Check Open-Meteo model data for the market location. These are not measurements from a station inside the market or official warnings; check the data time and forecast before setting out.',
+        loading: 'Loading the forecast…',
+        error: 'We could not load the forecast. Check SENAMHI or your usual forecast source before setting out.',
+        now: 'Current model data',
         next: 'Next days',
         advice: 'Recommendations by weather',
         note: 'Suggestions generated from the forecast; they do not replace official civil-protection or local-authority information.',
@@ -505,9 +505,9 @@ export const guide: Record<Locale, GuideContent> = {
         h2: 'How to reach the Mercado San Pedro.',
         cards: [
           [ 'From the airport', 'From Alejandro Velasco Astete International Airport, a taxi or ride app is usually the most direct option. Urban public transport also connects the airport axis with the centre; confirm the current route and stop before boarding.' ],
-          [ 'By city bus', 'Several RTU/RTI routes pass Calle Nueva, Concevidayoc, Santa Clara and Av. del Ejército, a few minutes’ walk away. The network can change; check signage and destination with the driver or an updated local source.' ],
+          [ 'By city bus', 'Confirm the route, stop and direction with the operator before boarding. This guide does not maintain a verified list of bus services.' ],
           [ 'By taxi', 'Say “Mercado de San Pedro” or “Plazoleta San Pedro”. In congested hours, it can be more efficient to get off a few blocks away and walk the rest. Agree the fare when appropriate and use authorised services.' ],
-          [ 'On foot and by train', 'From the Plaza de Armas the walk is short, via Mantas, Marqués and Santa Clara. The San Pedro train station is in front of / beside the market area and serves as an urban reference.' ]
+          [ 'On foot and by train', 'The MINCETUR inventory estimates about 700 m from Plaza de Armas (roughly 9 minutes as a reference, with no guarantee of access or walking time). San Pedro station is opposite the market; check tickets and services with the train operator.' ]
         ],
         note: 'Times and routes depend on traffic, works and operational changes. For rail or airport connections, always verify the operator’s information before travelling.'
       },
@@ -515,12 +515,12 @@ export const guide: Record<Locale, GuideContent> = {
         eyebrow: 'Useful services, no commercial recommendations',
         h2: 'What helps to know around the market.',
         cards: [
-          [ 'Toilets and washrooms', 'Look for signed sanitary facilities inside or in nearby public buildings. Coins and hand sanitiser can be handy.' ],
+          [ 'Toilets and washrooms', 'Ask the administration about toilet location, availability, accessibility and any charge. The 2025 MINCETUR record noted a need to improve sanitary facilities; we cannot guarantee their current condition.' ],
           [ 'Parking', 'The historic centre has narrow streets, traffic rules and limited parking. If you drive, prefer formal perimeter parking and continue on foot.' ],
           [ 'Food', 'Inside the market there are food, bread, juice and fresh-produce sections. For food safety, choose stalls with high turnover, clean surfaces and well-cooked food.' ],
           [ 'Lodging', 'Central Cusco offers many lodging categories. Compare location, accessibility, policies and records on official or independent platforms; this guide does not recommend specific establishments.' ],
           [ 'Shopping and groceries', 'The market itself is a large supply centre. On neighbouring streets you will find shops and convenience stores; avoid regulated or dubious-origin products.' ],
-          [ 'Fuel and charging', 'Fuel stations sit mainly outside the most walkable core. Charging points for electric vehicles are even rarer; plan charging ahead.' ]
+          [ 'Fuel and charging', 'No fuel or charging point beside the market has been verified. If needed, check location, availability and hours directly before travelling.' ]
         ]
       },
       comer: {
@@ -538,7 +538,7 @@ export const guide: Record<Locale, GuideContent> = {
       },
       entrada: {
         cards: [
-          { eyebrow: 'Entry and costs', title: 'No entry ticket', body: 'The market is a supply space with free entry. Budget only for what you consume and buy. We avoid publishing exact prices because they change with product, season and stall.' },
+          { eyebrow: 'Entry and costs', title: 'No entry ticket', body: 'The MINCETUR inventory lists free entry to the market. Meals and purchases are paid at each stall; check prices and conditions before ordering. Services and availability are not guaranteed.' },
           { eyebrow: 'Responsible shopping', title: 'Ask, compare, respect.', body: 'Ask the price before ordering, do not handle food without permission and avoid pressuring for photos. If you buy handicrafts, ask about materials and origin.' },
           { eyebrow: 'Practical safety', title: 'Mind your belongings.', body: 'As in any busy market, use a closed bag, avoid showing valuables and pay extra attention when crossing streets around the venue.' }
         ]
@@ -548,40 +548,40 @@ export const guide: Record<Locale, GuideContent> = {
         h2: 'Mercado Central de San Pedro',
         addr: 'Ca. Thupaq Amaru 477, Cusco 08002, Peru',
         mapsCta: 'Open in Google Maps',
-        govtText: 'For official news and regional tourism information, visit the',
-        govtName: 'Peru / Cusco Official Tourism Portal'
+        govtText: 'See the market record in the',
+        govtName: 'MINCETUR tourism inventory'
       },
       faq: {
         eyebrow: 'Frequently asked questions',
         h2: 'Before you go',
         items: [
-          [ 'Where is the Mercado Central de San Pedro located?', 'The Mercado Central de San Pedro is at Ca. Thupaq Amaru 477, Cusco, Cusco, Peru (F2H8+JW Cusco), a few blocks’ walk from the Plaza de Armas.' ],
+          [ 'Where is the Mercado Central de San Pedro located?', 'It is at Ca. Thupaq Amaru 477, Cusco 08002, Peru, according to the Google Maps listing checked 22 October 2026 (UTC). The MINCETUR inventory places it opposite San Pedro station.' ],
           [ 'What is the Mercado de San Pedro?', 'Mercado San Pedro is the usual name for the Mercado Central de San Pedro, the oldest covered food market in Cusco, in the traditional San Pedro neighbourhood.' ],
-          [ 'Is there a fee to enter the Mercado San Pedro?', 'No. Entry to the market is free. Food, handicrafts and other products are paid directly at each stall.' ],
-          [ 'What is the best time to visit?', 'The morning usually offers the fullest read of daily activity and fresh products. If you want to eat there, late morning to early afternoon is practical.' ],
+          [ 'Is there a fee to enter the Mercado San Pedro?', 'The MINCETUR inventory lists free entry to the market. Food, handicrafts and other products are paid for separately at each stall; check current conditions.' ],
+          [ 'What is the best time to visit?', 'Choose a time within the published references and check again if you want a particular stall or product. No time slot guarantees crowds or product availability.' ],
           [ 'How long should I stay?', 'Plan 60 to 90 minutes to walk the aisles calmly; add time if you sit down to eat or talk with vendors.' ],
-          [ 'Can I photograph inside?', 'Yes, but out of respect it is best to ask permission before photographing people or close-ups of stalls.' ],
+          [ 'Can I photograph inside?', 'Ask before photographing people or stalls and respect refusals and any instructions from the administration.' ],
           [ 'Should I bring cash?', 'Yes. In a traditional market many payments are still in soles and not all stalls accept cards. Small bills make small purchases easier.' ],
-          [ 'Are there toilets and basic services?', 'The market area has urban and sanitary services, but availability, access and conditions can vary. Confirm on site and bring change.' ],
+          [ 'Are there toilets and basic services?', 'Check toilet location, availability, accessibility and charges with the administration. The 2025 MINCETUR inventory noted improvements were needed; this guide does not certify their current condition.' ],
           [ 'Is it close to the historic centre?', 'Yes. It is in the traditional San Pedro neighbourhood, within the Historic Centre of Cusco and a short walk from the monumental core.' ],
           [ 'How does altitude affect the visit?', 'The market is in Cusco, above 3,000 m. Walk at an easy pace, hydrate and avoid overexertion if you are not yet acclimatised.' ]
         ]
       },
       fuentes: {
         h2: 'Sources and editorial criteria',
-        lead: 'This sheet was built by cross-checking MINCETUR’s National Tourism Resources Inventory, the Historic Centre catalogue of the Provincial Municipality of Cusco, and public mobility sources. Hours, routes and services can change; critical data should be verified before travelling.',
+        lead: 'Source review: 22 October 2026 (UTC). MINCETUR and PROMPERÚ support the market’s identity and context. Their published hours and Google Maps differ; details follow below.',
         photos: 'Photographs: façade — Ordzonhyd Rudyard Tarco Palomino / Wikimedia Commons (CC BY 4.0); juices — sergejf / Wikimedia Commons (CC BY 2.0); interior — Ashim D’Silva / Unsplash, file on Wikimedia Commons (CC0).'
       }
     },
     seasonal: {
       eyebrow: 'When to go',
       h2: 'Season-by-season visiting strategy.',
-      lead: 'The Cusco Andes have two main seasons. Figures are long-term climate averages (30-year normals) for orientation only; check the real forecast before each trip.',
+      lead: 'Regional orientation from PROMPERÚ, published 19 November 2021: a drier period from April to September and a rainy period from October to March. These are not 30-year climate normals or a current market forecast.',
       cols: [ 'Season', 'Months', 'Typical climate', 'Day / night', 'For visiting the market', 'Recommendations' ],
       rows: [
-        { epoca: 'Dry season', epocaSub: 'austral winter', meses: 'May – September', clima: 'Mostly clear, sunny days; clean skies, better visibility for photos. Little rain.', diaNoche: '18–21 °C / 0–5 °C', mercado: 'The best window: dry streets, fewer rain interruptions and a comfortable walk between market and centre.', recom: 'Warm layers for morning and night. Strong high-altitude sun: sunscreen and hat.' },
-        { epoca: 'Rainy season', epocaSub: 'austral summer', meses: 'October – April (Dec–Feb wettest)', clima: 'Often clear mornings; afternoon rain, cloud and wet ground. January and February are usually the wettest.', diaNoche: '19–22 °C / 7–10 °C', mercado: 'Go early: walk the market in the morning and keep the afternoon free in case it rains. The covered market shields you from rain.', recom: 'Non-slip footwear, umbrella or raincoat and a sturdy bag for shopping.' },
-        { epoca: 'Transition months', epocaSub: '', meses: 'April, October', clima: 'Variable weather, less extreme than each season’s peak. Good days for those who prefer fewer crowds.', diaNoche: '18–21 °C / 4–8 °C', mercado: 'A balance of sun and rain; bring both clothing options.', recom: 'Layer up: cold morning, mild midday.' }
+        { epoca: 'Dry season', epocaSub: 'austral winter', meses: 'April – September', clima: 'Mostly clear, sunny days; clean skies, better visibility for photos. Little rain.', diaNoche: 'Check the forecast', mercado: 'Rain remains possible. Plan outdoor sections using the day’s forecast.', recom: 'Warm layers for morning and night. Strong high-altitude sun: sunscreen and hat.' },
+        { epoca: 'Rainy season', epocaSub: 'austral summer', meses: 'October – March', clima: 'Seasonally greater chance of rain; it does not imply rain at a fixed time every day.', diaNoche: 'No verified range here', mercado: 'The market is covered, but outside routes remain exposed. Check the forecast before setting out.', recom: 'Non-slip footwear, umbrella or raincoat and a sturdy bag for shopping.' },
+        { epoca: 'Transition months', epocaSub: '', meses: 'April, October', clima: 'Season boundaries are approximate. They do not predict crowds or weather for an individual visit.', diaNoche: 'Variable conditions', mercado: 'A balance of sun and rain; bring both clothing options.', recom: 'Layer up: cold morning, mild midday.' }
       ],
       noteTitle: 'Altitude and climate reading',
       noteBody: 'Cusco is about 3,400 m above sea level. Solar radiation is intense during the day and nights can be cold all year. The difference between the covered market’s climate and the outside streets is notable: plan your walks with margin for sun, rain and cold.'
@@ -591,16 +591,16 @@ export const guide: Record<Locale, GuideContent> = {
       h2: 'Itineraries by visitor type.',
       lead: 'The Mercado San Pedro is walked on foot and pairs well with the historic spaces of the San Pedro neighbourhood and Cusco’s monumental core. These are suggestions that adapt to each person’s pace.',
       cards: [
-        { eyebrow: 'Families with children', title: 'Short walk with breaks', items: [ 'Enter in the morning, when there is more variety and fewer crowds.', 'Prioritise the fruit, juice and bread sections: visual and tasting activities.', 'Plan a meal stop inside the market (cooked dishes, broths).', 'Bring small cash and a change of clothes if it rains.' ], time: 'Suggested time: 60–90 min' },
-        { eyebrow: 'Photography and nature', title: 'Early light and detail', items: [ 'Best light is usually 08:00–10:30; ask permission before photographing people.', 'Look for textures: Andean grains, herbs, fruit and the play of light on the roof.', 'Climb toward the Plazoleta e Iglesia de San Pedro to frame the market and surroundings.', 'Combine with the Plaza de Armas for wider urban shots.' ], time: 'Suggested time: 90–120 min' },
-        { eyebrow: 'Reduced mobility / low effort', title: 'Slow and unhurried', items: [ 'The market is covered and level with the street; avoid peak hours.', 'Spot benches or rest areas and a fixed meeting point.', 'Use main aisles and avoid carrying heavy loads.', 'Hydrate and walk slowly because of the altitude.' ], time: 'Suggested time: 45–75 min' }
+        { eyebrow: 'Families with children', title: 'Short walk with breaks', items: [ 'Check market hours and the stalls you want to visit; crowd levels vary.', 'Prioritise the fruit, juice and bread sections: visual and tasting activities.', 'Plan a meal stop inside the market (cooked dishes, broths).', 'Bring small cash and a change of clothes if it rains.' ], time: 'Suggested time: 60–90 min' },
+        { eyebrow: 'Photography and nature', title: 'Early light and detail', items: [ 'Work with the available light and ask before photographing people or stalls.', 'Look for textures: Andean grains, herbs, fruit and the play of light on the roof.', 'Choose a viewpoint from permitted public areas without blocking passage.', 'Combine with the Plaza de Armas for wider urban shots.' ], time: 'Suggested time: 90–120 min' },
+        { eyebrow: 'Reduced mobility / low effort', title: 'Slow and unhurried', items: [ 'Check the suitable entrance, steps and aisle widths with the administration before visiting. A step-free route has not been verified.', 'Confirm resting places and accessible toilets; agree on a meeting point.', 'Use main aisles and avoid carrying heavy loads.', 'Hydrate and walk slowly because of the altitude.' ], time: 'Suggested time: 45–75 min' }
       ],
       rutasTitle: 'Suggested routes',
       rutas: [
-        { eyebrow: 'Half day', title: 'Market + San Pedro core', items: [ 'Andean products and juices at the Mercado San Pedro (60–90 min).', 'Eat or have a juice inside the market.', 'Walk out to the Plazoleta e Iglesia de San Pedro and its urban front.', 'Short walk via Santa Clara to the Arco San Francisco.' ], time: 'Total: about 3–4 h, on foot' },
-        { eyebrow: 'Full day', title: 'Market + monumental centre', items: [ 'Morning at the Mercado San Pedro and the Plazoleta e Iglesia de San Pedro (90–120 min).', 'Santa Clara – Arco San Francisco corridor toward the centre.', 'Lunch around the historic centre (Cusqueñan cuisine, daily menus).', 'Afternoon at the Plaza de Armas, cathedral and side streets.', 'Calm return to the San Pedro neighbourhood at dusk.' ], time: 'Total: about 6–7 h, on foot with breaks' }
+        { eyebrow: 'Half day', title: 'Market + San Pedro core', items: [ 'Andean products and juices at the Mercado San Pedro (60–90 min).', 'Eat or have a juice inside the market.', 'Walk out to the Plazoleta e Iglesia de San Pedro and its urban front.', 'If continuing along Santa Clara, check the route and street conditions first.' ], time: 'Total: about 3–4 h, on foot' },
+        { eyebrow: 'Full day', title: 'Market + monumental centre', items: [ 'Morning at the Mercado San Pedro and the Plazoleta e Iglesia de San Pedro (90–120 min).', 'Consider Santa Clara as an optional continuation after checking the route.', 'Lunch around the historic centre (Cusqueñan cuisine, daily menus).', 'Afternoon at the Plaza de Armas, cathedral and side streets.', 'Plan the return using confirmed transport, conditions and hours.' ], time: 'Total: about 6–7 h, on foot with breaks' }
       ],
-      note: 'Distances and times depend on traffic, crowding and weather. Adjust the route to the group’s pace and leave margin to rest for altitude.'
+      note: 'Planning ideas, not guided routes or guarantees of access. Nearby places are separate visits: check their hours, admission, routes and accessibility. Adapt timing and breaks to the group.'
     },
     responsibility: {
       eyebrow: 'Science and responsible visiting',
@@ -609,7 +609,7 @@ export const guide: Record<Locale, GuideContent> = {
       cards: [
         { title: 'Altitude and Andean climate', body: 'Cusco is about 3,400 m above sea level. Air pressure is lower and physical effort feels greater. UV radiation is high during the day, even when cold. Walk slowly the first days, drink water and use sun protection.' },
         { title: 'Pantry ecology', body: 'The market gathers products from different ecological floors: native potatoes, corn, quinoa and tubers from high zones, and fruit from warmer valleys. Observing that diversity is a direct way to understand Andean agriculture.' },
-        { title: 'Acclimatisation and energy', body: 'The body takes days to adjust to altitude. Avoid overexertion, alcohol and heavy meals on arrival. A short, slow walk through the market is a good first adjustment activity.' },
+        { title: 'Personal planning', body: 'This guide does not assess fitness for high-altitude visits. Adapt the route to your needs and consult a health professional if you have health concerns.' },
         { title: 'Buy with respect', body: 'Ask the price before ordering, do not handle food without permission and avoid aggressive haggling. If you buy handicrafts, ask about materials and origin: it helps value the seller’s work.' },
         { title: 'Less waste', body: 'Bring a reusable bag and, if possible, a bottle. The market generates much organic and plastic waste; your example reduces the impact in such a busy space.' },
         { title: 'Practical safety', body: 'As in any crowded market, use a closed bag, do not show valuables and pay attention when crossing streets. Altitude and sun are also risk factors: hydrate and wear a hat.' }
@@ -620,24 +620,24 @@ export const guide: Record<Locale, GuideContent> = {
       horario: {
         eyebrow: 'Hours & getting there',
         h1: 'Hours, location and how to reach the Mercado San Pedro',
-        intro: 'The Mercado Central de San Pedro opens early and closes in the late afternoon. It is a covered food market a couple of blocks from the Plaza de Armas, in the traditional San Pedro neighbourhood.',
+        intro: 'A covered food market in the San Pedro neighbourhood, opposite the railway station. Published reference hours differ and do not establish individual stall hours.',
         facts: [
-          { label: 'Reference hours', value: '06:00 – 18:00', sub: 'Reference tourism inventory; stalls and sections may vary.' },
-          { label: 'Entry', value: 'Free', sub: 'No entry ticket.' },
+          { label: 'Reference hours', value: 'Mon–Sat 06:30–18:00', sub: 'Sun 06:30–16:00 · Maps, 22 Oct 2026 UTC; check again.' },
+          { label: 'Entry', value: 'Free', sub: 'According to MINCETUR; purchases and meals are separate.' },
           { label: 'Altitude', value: '≈ 3,400 m' },
           { label: 'Address', value: 'Ca. Thupaq Amaru 477, Cusco 08002' }
         ],
         sections: [
-          { id: 'best-time', eyebrow: 'When to go', h2: 'Best time of day', lead: 'The morning is the fullest window to see the supply activity and the widest variety of fresh products.', body: [ 'Late morning to early afternoon is practical if you plan to sit and eat inside the market.', 'Avoid rushing: the aisles can be crowded, especially in high season.' ] },
-          { id: 'getting-there', eyebrow: 'How to get there', h2: 'Ways to arrive', cards: [ [ 'From the airport', 'From Alejandro Velasco Astete International Airport, a taxi or app is usually most direct. Urban public transport also connects with the centre.' ], [ 'By city bus', 'Several routes pass nearby, via Calle Nueva, Santa Clara and Av. del Ejército. Confirm the current route with the driver.' ], [ 'On foot', 'From the Plaza de Armas it is a short walk via Mantas, Marqués and Santa Clara.' ], [ 'By train', 'The San Pedro train station is in front of the market area and serves as a reference.' ] ] },
+          { id: 'best-time', eyebrow: 'When to go', h2: 'Choosing a time', lead: 'Consult the reference hours and check with the stall if you want a particular meal or product.', body: [ 'Late morning to early afternoon is practical if you plan to sit and eat inside the market.', 'Avoid rushing: the aisles can be crowded, especially in high season.' ] },
+          { id: 'getting-there', eyebrow: 'How to get there', h2: 'Ways to arrive', cards: [ [ 'From the airport', 'From Alejandro Velasco Astete International Airport, a taxi or app is usually most direct. Urban public transport also connects with the centre.' ], [ 'By city bus', 'Check the current service, stop and direction with the operator. Specific bus lines have not been verified in this guide.' ], [ 'On foot', 'MINCETUR estimates about 700 m from Plaza de Armas and 9 minutes on foot as a reference, with no guarantee of time or accessibility.' ], [ 'By train', 'The San Pedro train station is in front of the market area and serves as a reference.' ] ] },
           { id: 'altitude', eyebrow: 'Altitude and weather', h2: 'Visit calmly at altitude', body: [ 'Cusco is above 3,000 m. Walk slowly if you just arrived.', 'The market is covered, but outside streets can be cold and rainy by season.' ] }
         ],
         faqTitle: 'Before you go',
         faqEyebrow: 'Frequently asked questions',
         faq: [
-          [ 'What time does the Mercado San Pedro open?', 'As a reference tourism inventory, hours are 06:00–18:00. Stalls and sections may open or close at other times.' ],
+          [ 'What time does the Mercado San Pedro open?', 'Google Maps, checked 22 October 2026 (UTC), lists Monday–Saturday 06:30–18:00 and Sunday 06:30–16:00. MINCETUR and PROMPERÚ publish other references. Check before visiting; individual stalls may vary.' ],
           [ 'Is there a fee to enter?', 'No. Entry is free; you pay for what you consume or buy at each stall.' ],
-          [ 'Is it far from the Plaza de Armas?', 'No. It is a couple of blocks away, in the San Pedro neighbourhood, within the Historic Centre of Cusco.' ],
+          [ 'Is it far from the Plaza de Armas?', 'The MINCETUR inventory estimates about 700 m on foot from Plaza de Armas. Time and accessibility depend on the route and each person.' ],
           [ 'How do I get from the airport?', 'A taxi or app is usually most direct; urban public transport also connects the airport axis with the centre.' ]
         ]
       },
@@ -653,7 +653,7 @@ export const guide: Record<Locale, GuideContent> = {
         ],
         sections: [
           { id: 'eat', eyebrow: 'Eat inside', h2: 'What to look for to eat', cards: [ [ 'Juices and smoothies', 'Rows of stands prepare juices to order with local fruit and produce from warmer zones.' ], [ 'Broths and soups', 'Hot broths and soups are part of market cuisine, aimed at workers and visitors.' ], [ 'Bread and pastry', 'Pan chuta and traditional Cusqueñan bakery are usually present in the bread sections.' ], [ 'Market dishes', 'Popular dishes and daily menus show the region’s everyday cooking.' ] ] },
-          { id: 'buy', eyebrow: 'Shop', h2: 'What to take home', cards: [ [ 'Alpaca textiles', 'Alpaca-fibre weavings and garments; ask about materials and origin.' ], [ 'Andean grains', 'Native potatoes, corn, quinoa and chuño connect with the region’s agriculture.' ], [ 'Herbs and coca', 'Medicinal plants and coca leaf are part of Andean practices; use them with judgement.' ], [ 'Handicrafts and objects', 'Symbolic-use objects and local handicrafts help explain cultural continuity.' ] ] },
+          { id: 'buy', eyebrow: 'Shop', h2: 'What to take home', cards: [ [ 'Alpaca textiles', 'Alpaca-fibre weavings and garments; ask about materials and origin.' ], [ 'Andean grains', 'Native potatoes, corn, quinoa and chuño connect with the region’s agriculture.' ], [ 'Herbs and coca', 'Herbs and leaves are market products, not medical recommendations from this guide. Check applicable restrictions before transporting products.' ], [ 'Handicrafts and objects', 'Symbolic-use objects and local handicrafts help explain cultural continuity.' ] ] },
           { id: 'tips', eyebrow: 'Tips', h2: 'Buy with respect', body: [ 'Ask the price before ordering and compare between stalls.', 'Do not handle food without permission and avoid pressuring for photos.', 'Bring a reusable bag to reduce waste.' ] }
         ],
         faqTitle: 'Common questions',
@@ -683,7 +683,7 @@ export const guide: Record<Locale, GuideContent> = {
         faqTitle: 'Safety',
         faqEyebrow: 'Frequently asked questions',
         faq: [
-          [ 'Is the Mercado San Pedro safe?', 'It is a lively, busy market. With basic care for your belongings and attention to traffic, the visit is relaxed.' ],
+          [ 'Is the Mercado San Pedro safe?', 'It is a busy market; this guide cannot guarantee safety. Mind your belongings, watch traffic and follow local instructions.' ],
           [ 'Should I worry about altitude?', 'Yes. Cusco is above 3,000 m; walk slowly, hydrate and avoid overexertion on arrival.' ],
           [ 'Do they accept cards?', 'Many stalls are cash only; bring soles and small bills.' ],
           [ 'What if it rains?', 'The market is covered and shields you from rain; use non-slip footwear on outside streets.' ]
@@ -694,13 +694,13 @@ export const guide: Record<Locale, GuideContent> = {
       privacidad: {
         eyebrow: 'Legal information',
         h1: 'Privacy policy',
-        updated: 'Last updated: August 2026',
+        updated: 'Last updated: 22 October 2026',
         intro: 'This cultural guide is an independent, non-profit information project. We apply the data-minimisation principle: we process only the information needed to operate, protect and improve the site.',
         blocks: [
-          { h2: 'Information we may collect', items: [ { type: 'ul', items: [ 'Technical browsing data such as IP address, browser type, operating system, pages visited, approximate access date and diagnostic data.', 'Strictly necessary cookies or similar technologies to remember privacy preferences and, only if you authorise it, analytics data.', 'Information you voluntarily provide when contacting us by email or another published channel.' ] } ] },
-          { h2: 'How we use the information', items: [ { type: 'ul', items: [ 'Improve content, accessibility and the user experience.', 'Analyse general traffic trends when there is consent for analytics.', 'Respond to requests and communications.', 'Prevent abuse, resolve technical incidents and meet legal obligations.' ] } ] },
+          { h2: 'Information we may collect', items: [ { type: 'ul', items: [ 'Technical browsing data such as IP address, browser type, operating system, pages visited, approximate access date and diagnostic data.', 'Strictly necessary cookies or similar technologies to remember privacy preferences and, only if you authorise it, analytics data.', 'This guide has no accounts, booking service or own contact form or email address.' ] } ] },
+          { h2: 'How we use the information', items: [ { type: 'ul', items: [ 'Improve content, accessibility and the user experience.', 'Analyse general traffic trends when there is consent for analytics.', 'Display information and the forecast requested by the page.', 'Prevent abuse, resolve technical incidents and meet legal obligations.' ] } ] },
           { h2: 'Legal basis and consent', items: [ { type: 'p', text: 'Necessary cookies are used for essential functions. Analytics cookies are not enabled by default: they require an affirmative choice on the cookie settings page. When processing is based on consent, you may withdraw it at any time.' } ] },
-          { h2: 'Third-party services', items: [ { type: 'p', text: 'The site may embed Google Maps to show location, Google Analytics for traffic measurement only when you authorise it, and photographic resources from Wikimedia Commons or Unsplash. Each provider applies its own terms and privacy policy. Loading an embedded map may involve a direct connection to Google.' } ] },
+          { h2: 'Third-party services', items: [ { type: 'p', text: 'The embedded map connects to Google when loaded. Google Analytics is requested only when the analytics choice is effective. Cloudflare hosting receives site requests and technical data. The forecast is requested from this site, which contacts Open-Meteo server-side; photographs are served by this site. The Google Analytics control does not control the map or hosting technical logs.' } ] },
           { h2: 'Retention and security', items: [ { type: 'p', text: 'We keep no own advertising profiles or user database. Technical data retained by infrastructure or analytics providers is governed by their periods and controls. We apply reasonable measures to reduce unnecessary collection and data exposure.' } ] },
           { h2: 'Your rights', items: [ { type: 'p', text: 'Under applicable law — including the General Data Protection Regulation (GDPR) where relevant — you may request access, rectification, erasure, restriction or objection to processing and, where applicable, portability. You may also withdraw consent and lodge a complaint with the competent supervisory authority.' } ] },
           { h2: 'Minors', items: [ { type: 'p', text: 'This site is not designed to knowingly collect personal data from minors. If we detect such information obtained improperly, we will seek to delete it.' } ] },
@@ -710,7 +710,7 @@ export const guide: Record<Locale, GuideContent> = {
       terminos: {
         eyebrow: 'Legal information',
         h1: 'Terms of service',
-        updated: 'Last updated: August 2026',
+        updated: 'Last updated: 22 October 2026',
         intro: 'By accessing and using this guide, you accept these terms. If you disagree, you may stop using the site.',
         blocks: [
           { h2: 'Nature of the project', items: [ { type: 'p', text: 'We are an independent, non-profit, informational tourism and culture guide. We do not represent the Mercado Central de San Pedro, the Provincial Municipality of Cusco, the Regional Government of Cusco, MINCETUR or commercial operators.' } ] },
@@ -727,25 +727,25 @@ export const guide: Record<Locale, GuideContent> = {
       cookies: {
         eyebrow: 'Privacy and preferences',
         h1: 'Cookie settings',
-        updated: 'Last updated: August 2026',
+        updated: 'Last updated: 22 October 2026',
         intro: 'We use cookies and local storage for essential functions and, if you authorise it, to understand aggregated site usage. You can change your choice at any time from this page.',
         blocks: [
-          { h2: 'Consent management', items: [ { type: 'p', text: 'The preference is stored in your browser’s local storage under the key msp-cookie-preferences. Clearing site data will remove this choice. Disabling cookies or local storage may affect some functions, but the main content remains accessible.' } ] }
+          { h2: 'Consent management', items: [ { type: 'p', text: 'Allow or reject Google Analytics here; the change applies to future requests on this page and does not undo data already sent. If the browser blocks storing or reading the choice, analytics stays off on this page and the refusal scope is explained. Propagation to other tabs or browsers is not guaranteed. Clearing site data removes stored choices.' } ] }
         ],
         form: {
-          necessaryTitle: 'Necessary cookies',
-          necessaryBody: 'Essential to remember your privacy settings and keep basic functions. They cannot be disabled from this panel.',
+          necessaryTitle: 'Choice storage',
+          necessaryBody: 'The choice is stored in this browser. Refusal also uses session storage and a tab marker where available. Analytics acceptance is not needed to read the guide.',
           analyticsTitle: 'Analytics cookies',
           analyticsBody: 'Enable Google Analytics for aggregated usage statistics. They stay disabled until you accept them.',
           prefsTitle: 'Preference cookies',
-          prefsBody: 'Remember non-essential interface settings on this device, such as the guide’s language.',
+          prefsBody: 'Language is chosen through the Español/English links and URL; no language preference is stored.',
           marketingTitle: 'Marketing cookies',
           marketingBody: 'This project uses no personalised advertising or marketing cookies. This category stays inactive.',
           save: 'Save preferences',
           reject: 'Reject non-essential',
-          saved: 'Preferences saved. Changes will fully apply after reloading the page.',
+          saved: 'Google Analytics: choice saved.',
           rejected: 'All non-essential cookies have been rejected.',
-          prefsNote: 'The site offers the guide in Spanish and English; your language choice is remembered on this device.',
+          prefsNote: 'Language is chosen through links, without a language cookie.',
           consentTitle: 'Consent management',
           consentBody: 'The preference is stored in your browser’s local storage under the key msp-cookie-preferences.',
           key: 'msp-cookie-preferences'

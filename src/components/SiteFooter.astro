@@ -15,7 +15,7 @@ const legalLinks = g.footer.legal.map((l) => ({ label: l.label, href: pathFor(lo
       <img src="/icons/logo.svg" alt="Mercado San Pedro — Guía cultural de Cusco" class="mb-5 h-14 w-auto rounded bg-[#fbf7ee] px-2" />
       <p class="max-w-3xl text-sm leading-7 text-white/75">{g.footer.disclaimer1}</p>
       <p class="mt-3 max-w-3xl text-sm leading-7 text-white/75">{g.footer.disclaimer2}</p>
-      <p class="mt-3 text-sm text-white/60">Derechos de imagen: las fotografías pertenecen a sus autores originales y se utilizan conforme a sus licencias o condiciones de publicación.</p>
+      <p class="mt-3 text-sm text-white/60">{locale === 'es' ? 'Fotografías: consulta la fuente, autor y licencia junto a cada imagen.' : 'Photographs: see the source, author and licence beside each image.'}</p>
     </div>
     <div class="lg:text-right">
       <div class="flex flex-wrap gap-x-5 gap-y-2 text-sm lg:justify-end">

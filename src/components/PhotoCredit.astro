@@ -1,0 +1,13 @@
+---
+import type { Locale } from '../i18n';
+interface Props { image: 'facade' | 'juices' | 'interior'; locale: Locale; }
+const { image, locale } = Astro.props;
+const photos = {
+ facade: { file: 'Fachada_Mercado_San_Pedro,_Cusco.jpg', author: 'Ordzonhyd Rudyard Tarco Palomino', date: '2023-10-12', license: 'CC BY 4.0', url: 'https://creativecommons.org/licenses/by/4.0/' },
+ juices: { file: 'Fruit_juices_heaven_at_the_Mercado_Central_de_San_Pedro.jpg', author: 'sergejf', date: '2015-07-20', license: 'CC BY 2.0', url: 'https://creativecommons.org/licenses/by/2.0/' },
+ interior: { file: 'San_Pedro_Market_in_Cusco,_Peru.jpg', author: 'Ashim D’Silva', date: '2016-06-09', license: 'CC0 1.0', url: 'https://creativecommons.org/publicdomain/zero/1.0/' }
+};
+const p = photos[image];
+---
+<p class="photo-credit"><a href={`https://commons.wikimedia.org/wiki/File:${p.file}`}>{p.author} · {p.date} · Wikimedia Commons</a> · <a href={p.url}>{p.license}</a>. {locale === 'es' ? 'Redimensionada y comprimida; encuadre adaptable.' : 'Resized and compressed; responsive crop.'}</p>
+<style>.photo-credit{font-size:.75rem;line-height:1.65;padding:.75rem 0;overflow-wrap:anywhere}.photo-credit a{text-decoration:underline;text-underline-offset:3px}</style>

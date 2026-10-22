@@ -21,3 +21,11 @@ body { margin: 0; color: var(--tinta); background: var(--papel); font-family: ui
 .prose-policy h3 { font-weight: 700; margin-top: 1.4rem; }
 .prose-policy p, .prose-policy li { line-height: 1.8; color: #46423b; }
 .prose-policy ul { padding-left: 1.2rem; list-style: disc; }
+
+/* Forecast DOM is created at runtime; keep its styles in the shipped stylesheet. */
+.weather-label { color: rgb(255 255 255 / .7); }
+.weather-value { font-weight: 700; white-space: nowrap; }
+.weather-day { display: grid; grid-template-columns: 1fr auto; gap: .4rem 1rem; padding: .85rem 0; }
+.weather-date { font-weight: 600; }
+.weather-condition { grid-row: 2; }
+.weather-rain { font-size: .8rem; text-align: right; }

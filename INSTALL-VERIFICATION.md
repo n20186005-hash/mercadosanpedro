@@ -1,22 +1,7 @@
-# Estado de verificación del ensamblado
+# Verificación local
 
-El entorno de ejecución usado para preparar este paquete no tiene resolución DNS saliente hacia `registry.npmjs.org`. Por ese motivo no fue posible descargar pnpm/dependencias, producir el grafo transitorio completo del lockfile ni ejecutar honestamente la secuencia de instalación limpia.
+La instalación con pnpm 11.13.1 y `--frozen-lockfile` resolvió el lockfile existente sin modificarlo. `pnpm check` y `pnpm build` se ejecutan sobre el código de Astro; el Worker se valida adicionalmente con su runtime de Static Assets. `dist/` sigue sin versionarse.
 
-El `pnpm-lock.yaml` incluido fija el importador y las versiones directas solicitadas, pero **debe regenerarse una vez en un entorno con acceso a npm antes de tratarlo como lockfile final**:
+Si el entorno bloquea la escritura de preferencias de telemetría de Astro, se puede usar `ASTRO_TELEMETRY_DISABLED=1` al ejecutar las comprobaciones. No es necesario regenerar el lockfile para solucionar ese permiso local.
 
-```bash
-corepack enable
-corepack prepare pnpm@11.13.1 --activate
-pnpm install --no-frozen-lockfile
-rm -rf node_modules dist .astro
-CI=1 corepack pnpm install --frozen-lockfile
-pnpm check
-pnpm build
-grep -RInE 'example\\.com|localhost|chrome-extension://' dist || true
-```
-
-Si `SITE_URL` no está definido, no se genera sitemap. Para generar sitemap con URLs reales:
-
-```bash
-SITE_URL=https://DOMINIO-REAL pnpm build
-```
+Una compilación local no acredita una publicación. La revisión visual de los dos idiomas, las interacciones, el pronóstico y el dominio de producción corresponde a una fase posterior de aceptación.

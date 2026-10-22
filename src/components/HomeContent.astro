@@ -1,6 +1,8 @@
 ---
 import { guide } from '../content/guide';
-import { MAPS_SHARE_URL, MAPS_EMBED_SRC, GOVT_TOURISM_URL, ATTRACTION_FULL_NAME, CITY_NAME } from '../data/site';
+import { MAPS_SHARE_URL, MAPS_EMBED_SRC, GOVT_TOURISM_URL } from '../data/site';
+import PhotoCredit from './PhotoCredit.astro';
+import SourceNotes from './SourceNotes.astro';
 import SeasonalStrategy from './SeasonalStrategy.astro';
 import Itineraries from './Itineraries.astro';
 import VisitorResponsibility from './VisitorResponsibility.astro';
@@ -11,17 +13,15 @@ interface Props {
 }
 const { locale } = Astro.props;
 const h = guide[locale].home;
-const c = guide[locale];
 
-const imageBase = 'https://upload.wikimedia.org/wikipedia/commons';
-const hero = `${imageBase}/6/69/Fachada_Mercado_San_Pedro%2C_Cusco.jpg`;
-const fruit = `${imageBase}/b/b5/Fruit_juices_heaven_at_the_Mercado_Central_de_San_Pedro.jpg`;
-const inside = `${imageBase}/3/36/San_Pedro_Market_in_Cusco%2C_Peru.jpg`;
+const hero = '/images/facade.webp';
+const fruit = '/images/juices.webp';
+const inside = '/images/interior.webp';
 const mapEmbed = MAPS_EMBED_SRC;
 ---
 <main>
   <section class="relative isolate min-h-[76vh] overflow-hidden bg-[#1f211e] text-white">
-    <img src={hero} alt={`${ATTRACTION_FULL_NAME} - Main view in ${CITY_NAME}`} class="absolute inset-0 -z-20 h-full w-full object-cover" referrerpolicy="no-referrer" />
+    <img src={hero} alt={locale === 'es' ? 'Fachada del Mercado San Pedro de Cusco' : 'Facade of San Pedro Market in Cusco'} class="absolute inset-0 -z-20 h-full w-full object-cover" referrerpolicy="no-referrer" />
     <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/80 via-black/55 to-black/20"></div>
     <div class="mx-auto flex min-h-[76vh] max-w-7xl items-end px-5 pb-14 pt-24 lg:px-8 lg:pb-20">
       <div class="max-w-4xl">
@@ -34,6 +34,7 @@ const mapEmbed = MAPS_EMBED_SRC;
         </div>
       </div>
     </div>
+    <div class="mx-auto max-w-7xl px-5 pb-4 lg:px-8"><PhotoCredit image="facade" locale={locale} /></div>
   </section>
 
   <section class="border-y-4 market-border bg-[#f7e8c9]">
@@ -44,6 +45,8 @@ const mapEmbed = MAPS_EMBED_SRC;
       <div><p class="text-xs font-bold uppercase tracking-[.18em] text-[#7d2f21]">{h.facts.direccion.label}</p><p class="mt-1 font-bold">{h.facts.direccion.value}</p></div>
     </div>
   </section>
+
+  <SourceNotes locale={locale} />
 
   <section id="acerca" class="py-20">
     <div class="mx-auto max-w-7xl px-5 lg:px-8">
@@ -71,8 +74,8 @@ const mapEmbed = MAPS_EMBED_SRC;
         <p class="mt-4 leading-8 text-black/70">{h.historia.p3}</p>
       </div>
       <div class="grid gap-4 sm:grid-cols-2">
-        <img src={inside} alt={h.historia.imgInside} class="h-full min-h-80 w-full rounded-[2rem] object-cover sm:row-span-2" referrerpolicy="no-referrer" />
-        <img src={fruit} alt={h.historia.imgFruit} class="h-64 w-full rounded-[2rem] object-cover" referrerpolicy="no-referrer" />
+        <figure class="sm:row-span-2"><img loading="lazy" width="1000" height="667" src={inside} alt={h.historia.imgInside} class="h-96 w-full rounded-[2rem] object-cover" /><figcaption><PhotoCredit image="interior" locale={locale} /></figcaption></figure>
+        <figure><img loading="lazy" width="1000" height="609" src={fruit} alt={h.historia.imgFruit} class="h-64 w-full rounded-[2rem] object-cover" /><figcaption><PhotoCredit image="juices" locale={locale} /></figcaption></figure>
         <div class="rounded-[2rem] bg-[#315d42] p-7 text-white">
           <p class="text-xs font-bold uppercase tracking-[.2em] text-white/60">{h.historia.culturalTitle}</p>
           <p class="display mt-3 text-2xl font-bold">{h.historia.culturalBody}</p>
@@ -128,6 +131,7 @@ const mapEmbed = MAPS_EMBED_SRC;
           </div>
           <div class="rounded-3xl border border-black/10 bg-white/60 p-6">
             <p class="text-xs font-bold uppercase tracking-[.2em] text-[#7d2f21]">{h.clima.next}</p>
+            <p id="w-updated" class="mt-3 text-sm"></p>
             <ul id="w-daily" class="mt-4 divide-y divide-black/10"></ul>
           </div>
         </div>
@@ -140,78 +144,14 @@ const mapEmbed = MAPS_EMBED_SRC;
             <div id="blk-play"><p class="font-bold text-[#315d42]">{h.clima.blocks.play}</p><ul id="w-play" class="mt-2 space-y-2 text-sm leading-7 text-black/70"></ul></div>
             <div id="blk-items"><p class="font-bold text-[#315d42]">{h.clima.blocks.items}</p><ul id="w-items" class="mt-2 space-y-2 text-sm leading-7 text-black/70"></ul></div>
           </div>
-          <p class="mt-5 text-xs text-black/45">{h.clima.note}</p>
+          <p class="mt-5 text-xs text-black/60">{h.clima.note}</p>
+          <p class="mt-3 text-xs leading-6"><a class="underline" href="https://open-meteo.com/">Open-Meteo</a> · <a class="underline" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. {locale === 'es' ? 'Datos redondeados y resumidos; sugerencias calculadas por esta guía. Referencia oficial:' : 'Data rounded and summarised; suggestions calculated by this guide. Official reference:'} <a class="underline" href="https://www.senamhi.gob.pe/?p=pronostico-detalle&dp=08&localidad=0019">SENAMHI Cusco</a>.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <script>
-    const LANG = (document.documentElement.lang || 'es').startsWith('en') ? 'en' : 'es';
-    const dir = (d: number) => { const p = ['N','NE','E','SE','S','SO','O','NO']; return p[Math.round((d % 360) / 45) % 8]; };
-    const fmt = (n: number | null | undefined) => (n === null || n === undefined || Number.isNaN(n as number)) ? '–' : Math.round(n as number);
-    const dayLabel = (s: string) => {
-      try { return new Date(s + 'T00:00').toLocaleDateString(LANG === 'en' ? 'en-US' : 'es-PE', { weekday: 'short', day: 'numeric', month: 'short' }); } catch (e) { return s; }
-    };
-    function render(d: any) {
-      const cur = d.current || {};
-      const now = document.getElementById('w-now');
-      if (now) now.textContent = (cur.temp !== undefined ? Math.round(cur.temp) : '–') + '°';
-      const cd = document.getElementById('w-now-cond');
-      if (cd) cd.textContent = (cur.glyph || '') + ' ' + (cur.condLabel || '') + (cur.isDay === false ? ' (night)' : '');
-      const dl = document.getElementById('w-now-details');
-      if (dl) {
-        dl.innerHTML = '';
-        const rows = [['Feels', (cur.feels !== undefined ? Math.round(cur.feels) + '°' : '–')], ['Humidity', (cur.humidity !== undefined ? Math.round(cur.humidity) + '%' : '–')], ['Wind', (cur.wind !== undefined ? Math.round(cur.wind) + ' km/h ' + dir(cur.windDir || 0) : '–')], ['Rain now', (cur.precip !== undefined ? (cur.precip > 0 ? cur.precip + ' mm' : 'dry') : '–')]];
-        for (const [k, v] of rows) { const dt = document.createElement('div'); dt.innerHTML = '<dt class="text-white/60">' + k + '</dt><dd class="font-bold">' + v + '</dd>'; dl.appendChild(dt); }
-      }
-      const a = d.advisory || {};
-      const risk = document.getElementById('w-risk');
-      if (risk) {
-        if (a.risk && a.risk.length) {
-          risk.hidden = false; risk.innerHTML = '';
-          const hh = document.createElement('p'); hh.className = 'font-bold'; hh.textContent = LANG === 'en' ? '⚠️ Risk' : '⚠️ Riesgo'; risk.appendChild(hh);
-          for (const t of a.risk) { const p = document.createElement('p'); p.className = 'mt-1'; p.textContent = '• ' + t; risk.appendChild(p); }
-        } else { risk.hidden = true; }
-      }
-      const fill = (listId: string, blkId: string, arr: string[] | undefined) => {
-        const ul = document.getElementById(listId); const blk = document.getElementById(blkId);
-        if (!ul) return; ul.innerHTML = '';
-        if (arr && arr.length) { if (blk) blk.hidden = false; for (const t of arr) { const li = document.createElement('li'); li.className = 'flex gap-2'; li.textContent = '• ' + t; ul.appendChild(li); } }
-        else if (blk) { blk.hidden = true; }
-      };
-      fill('w-travel', 'blk-travel', a.travel);
-      fill('w-play', 'blk-play', a.play);
-      fill('w-items', 'blk-items', a.items);
-      const ul = document.getElementById('w-daily');
-      if (ul) {
-        ul.innerHTML = '';
-        (d.daily || []).forEach((day: any) => {
-          const li = document.createElement('li');
-          li.className = 'flex items-center justify-between gap-3 py-3';
-          li.innerHTML = '<span class="w-28 shrink-0 text-sm font-semibold">' + dayLabel(day.date) + '</span><span class="text-xl">' + (day.glyph || '') + '</span><span class="flex-1 text-sm">' + (day.condLabel || '') + '</span><span class="text-sm font-bold whitespace-nowrap">' + fmt(day.tmax) + '° / ' + fmt(day.tmin) + '°</span><span class="w-16 text-right text-xs text-black/55">rain ' + fmt(day.precipProb) + '%</span>';
-          ul.appendChild(li);
-        });
-      }
-    }
-    async function load() {
-      const loading = document.getElementById('w-loading');
-      try {
-        const res = await fetch('/api/weather?lang=' + LANG);
-        if (!res.ok) throw new Error('bad');
-        const d = await res.json();
-        render(d);
-        const content = document.getElementById('w-content');
-        if (content) content.hidden = false;
-        if (loading) loading.remove();
-      } catch (e) {
-        if (loading) loading.remove();
-        const err = document.getElementById('w-error');
-        if (err) err.hidden = false;
-      }
-    }
-    load();
-  </script>
+  <script is:inline defer src="/weather.js"></script>
 
   <section id="transporte" class="bg-[#efe6d7] py-20">
     <div class="mx-auto max-w-7xl px-5 lg:px-8">
@@ -289,7 +229,7 @@ const mapEmbed = MAPS_EMBED_SRC;
           <p class="mt-4 text-sm text-white/70">{h.ubicacion.govtText} <a href={GOVT_TOURISM_URL} target="_blank" rel="noopener noreferrer" class="underline underline-offset-4 text-[#f1b83b]">{h.ubicacion.govtName}</a>.</p>
         </div>
         <div class="overflow-hidden rounded-[2rem] border border-white/15">
-          <iframe src={mapEmbed} title="Mapa del Mercado Central de San Pedro, Cusco" width="100%" height="450" style="border:0" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <iframe src={mapEmbed} title={locale === 'es' ? 'Mapa del Mercado San Pedro, Cusco' : 'Map of San Pedro Market, Cusco'} width="100%" height="450" style="border:0" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
     </div>

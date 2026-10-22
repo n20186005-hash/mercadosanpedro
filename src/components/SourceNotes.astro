@@ -1,0 +1,17 @@
+---
+import type { Locale } from '../i18n';
+import { MAPS_SHARE_URL, GOVT_TOURISM_URL } from '../data/site';
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const es = locale === 'es';
+---
+<aside class="source-notes mx-auto max-w-7xl px-5 py-10 lg:px-8" aria-label={es ? 'Fuentes y horarios de referencia' : 'Sources and reference hours'}>
+ <h2 class="text-xl font-bold">{es ? 'Fuentes y horarios: consulta del 22 de octubre de 2026 (UTC)' : 'Sources and hours: checked 22 October 2026 (UTC)'}</h2>
+ <ul class="mt-4 space-y-3 text-sm leading-7">
+  <li><a href={MAPS_SHARE_URL}>Google Maps</a>: {es ? 'lunes a sábado 06:30–18:00; domingo 06:30–16:00. Dirección: Ca. Thupaq Amaru 477, Cusco 08002.' : 'Monday–Saturday 06:30–18:00; Sunday 06:30–16:00. Address: Ca. Thupaq Amaru 477, Cusco 08002.'} {es ? 'La ficha muestra 4,3/5 y unas 46.000 reseñas; es una instantánea de terceros, no una valoración de esta guía.' : 'The listing shows 4.3/5 from about 46,000 reviews; this is a third-party snapshot, not a rating by this guide.'}</li>
+  <li><a href={GOVT_TOURISM_URL}>{es ? 'Inventario MINCETUR, ficha 6899' : 'MINCETUR inventory, record 6899'}</a>: {es ? 'horario referencial 06:30–16:00 e ingreso libre. Ficha actualizada el 18 de junio de 2025; respalda identidad, inauguración y declaración patrimonial.' : 'reference hours 06:30–16:00 and free entry. Record updated 18 June 2025; supports identity, opening history and heritage declaration.'}</li>
+  <li>PROMPERÚ: <a href="https://www.peru.travel/es/atractivos/mercado-san-pedro">{es ? 'página en español' : 'Spanish page'}</a> {es ? 'indica' : 'lists'} 06:00–17:00; <a href="https://www.peru.travel/attractions/san-pedro-market">{es ? 'página en inglés' : 'English page'}</a> {es ? 'lunes a sábado' : 'Monday–Saturday'} 06:00–18:00, {es ? 'domingo' : 'Sunday'} 06:00–16:00.</li>
+ </ul>
+ <p class="mt-4 text-sm font-semibold">{es ? 'Las fuentes difieren. Son referencias fechadas, no confirmación del funcionamiento de hoy: vuelve a comprobar antes de desplazarte. Los puestos de comida y comercios pueden tener otros horarios, precios y disponibilidad.' : 'Sources differ. These dated references do not confirm today’s operation: check again before travelling. Food stalls and shops may have different hours, prices and availability.'}</p>
+</aside>
+<style>.source-notes a{color:#315d42;text-decoration:underline;text-underline-offset:3px}</style>

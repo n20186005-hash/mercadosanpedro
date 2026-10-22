@@ -51,32 +51,9 @@ const altLocale = otherLocale(locale);
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image:alt" content={ogImageAlt} />
     <title>{title}</title>
-    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
-    <script is:inline>
-      const consent = localStorage.getItem('msp-cookie-preferences');
-      if (consent) {
-        try {
-          const preferences = JSON.parse(consent);
-          if (preferences.analytics === true) {
-            const s = document.createElement('script');
-            s.async = true;
-            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP';
-            document.head.appendChild(s);
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = function(){ window.dataLayer.push(arguments); };
-            window.gtag('js', new Date());
-            window.gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
-          }
-        } catch (_) {}
-      }
-    </script>
-    <script is:inline>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {});
-        });
-      }
-    </script>
+    {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+    <script is:inline defer src="/consent.js"></script>
+    <script is:inline defer src="/retire-offline.js"></script>
   </head>
   <body>
     <slot />

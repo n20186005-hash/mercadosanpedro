@@ -8,17 +8,17 @@ import {
   SITE_URL, ATTRACTION_FULL_NAME, ATTRACTION_SHORT_NAME, CITY_NAME, STATE_PROVINCE,
   COUNTRY_NAME, STREET_ADDRESS, POSTAL_CODE, COUNTRY_CODE_2LETTER,
   LATITUDE, LONGITUDE, MAPS_SHARE_URL, GOVT_TOURISM_URL,
-  RATING_VALUE, REVIEW_COUNT, HERO_IMAGE, OPENING_HOURS, SITE_NAME_EN
+  HERO_IMAGE
 } from '../../data/site';
 import type { Locale } from '../../i18n';
 
 const locale: Locale = 'en';
 const faq = guide[locale].home.faq.items;
-const insideImg = 'https://upload.wikimedia.org/wikipedia/commons/3/36/San_Pedro_Market_in_Cusco%2C_Peru.jpg';
+const insideImg = `${SITE_URL}/images/interior.webp`;
 
 const placeSchema = {
   '@context': 'https://schema.org',
-  '@type': ['TouristAttraction', 'LocalBusiness'],
+  '@type': 'TouristAttraction',
   '@id': `${SITE_URL}/#attraction`,
   name: ATTRACTION_FULL_NAME,
   alternateName: [ATTRACTION_SHORT_NAME, `${CITY_NAME} ${ATTRACTION_FULL_NAME}`],
@@ -27,15 +27,12 @@ const placeSchema = {
   image: [HERO_IMAGE, insideImg],
   address: { '@type': 'PostalAddress', streetAddress: STREET_ADDRESS, addressLocality: CITY_NAME, addressRegion: STATE_PROVINCE, postalCode: POSTAL_CODE, addressCountry: COUNTRY_CODE_2LETTER },
   geo: { '@type': 'GeoCoordinates', latitude: LATITUDE, longitude: LONGITUDE },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: RATING_VALUE, reviewCount: REVIEW_COUNT },
-  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], opens: OPENING_HOURS.opens, closes: OPENING_HOURS.closes }],
-  isAccessibleForFree: true,
   hasMap: MAPS_SHARE_URL,
   sameAs: [MAPS_SHARE_URL, GOVT_TOURISM_URL]
 };
 const faqSchema = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
 ---
-<BaseLayout title={SITE_NAME_EN} description={`Discover the ${ATTRACTION_FULL_NAME}, the iconic market in ${CITY_NAME}, ${STATE_PROVINCE}, ${COUNTRY_NAME}. Check live weather, the location map, hours, nearby spots like the Plazoleta e Iglesia de San Pedro and travel tips.`} locale="en" routeKey="home" structuredData={[placeSchema, faqSchema]}>
+<BaseLayout title="San Pedro Market Cusco: hours, location and food" description="Independent San Pedro Market guide: dated reference hours, address, how to get there, food, shopping and practical visitor advice." locale="en" routeKey="home" structuredData={[placeSchema, faqSchema]}>
 <SiteHeader locale="en" routeKey="home" />
 <HomeContent locale="en" />
 <SiteFooter locale="en" />

@@ -11,7 +11,7 @@ const { locale, routeKey } = Astro.props;
 const g = guide[locale];
 const other = otherLocale(locale);
 const homePath = pathFor(locale, 'home');
-const subLinks = (['horario', 'comida', 'seguridad'] as RouteKey[]).map((k) => ({
+const subLinks = (['horario', 'comida', 'seguridad'] as const).map((k) => ({
   key: k,
   label: g.nav[k],
   href: pathFor(locale, k)
@@ -21,7 +21,7 @@ const switchHref = pathFor(other, routeKey);
 <header class="sticky top-0 z-40 border-b border-black/10 bg-[#fbf7ee]/95 backdrop-blur">
   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
     <a href={homePath} aria-label={g.nav.home} class="shrink-0"><img src="/icons/logo.svg" alt="Mercado San Pedro — Guía cultural de Cusco" class="h-12 w-auto" /></a>
-    <nav aria-label="Navegación principal" class="hidden items-center gap-5 text-sm font-semibold md:flex">
+    <nav aria-label={locale === 'es' ? 'Navegación principal' : 'Main navigation'} class="hidden items-center gap-5 text-sm font-semibold md:flex">
       <a href={homePath} class="hover:text-[#b6442f]">{g.nav.home}</a>
       {subLinks.map((l) => <a href={l.href} class="hover:text-[#b6442f]">{l.label}</a>)}
     </nav>
@@ -30,4 +30,5 @@ const switchHref = pathFor(other, routeKey);
       <a href={MAPS_SHARE_URL} rel="noopener noreferrer" class="rounded-full bg-[#315d42] px-4 py-2 text-sm font-bold text-white hover:bg-[#264a35]">{g.nav.maps}</a>
     </div>
   </div>
+  <details class="px-5 pb-3 md:hidden"><summary class="cursor-pointer py-2 font-bold">{locale === 'es' ? 'Menú' : 'Menu'}</summary><nav aria-label={locale === 'es' ? 'Navegación móvil' : 'Mobile navigation'} class="flex flex-col gap-3 py-3"><a href={homePath}>{g.nav.home}</a>{subLinks.map(l => <a href={l.href}>{l.label}</a>)}</nav></details>
 </header>

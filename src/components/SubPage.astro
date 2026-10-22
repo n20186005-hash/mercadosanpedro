@@ -1,4 +1,5 @@
 ---
+import SourceNotes from './SourceNotes.astro';
 import { guide } from '../content/guide';
 import type { Locale } from '../i18n';
 
@@ -25,6 +26,8 @@ const s = guide[locale].sub[subKey];
       ))}
     </div>
   </section>
+
+  {subKey === 'horario' && <SourceNotes locale={locale} />}
 
   {s.sections.map((sec) => (
     <section id={sec.id} class="py-20">
